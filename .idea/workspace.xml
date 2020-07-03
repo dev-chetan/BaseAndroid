@@ -7,16 +7,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6459d845-2b24-4d18-a3c0-4ea0ef549ca2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mylibrary/src/main/java/com/android/mylibrary/Temp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mylibrary/src/main/java/com/android/mylibrary/widget/RBHtmlTextView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mylibrary/src/main/java/com/android/mylibrary/widget/RBNonSwipePageView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mylibrary/src/main/res/values/attrs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/mylibrary/mylibrary.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/mylibrary/rb.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mylibrary/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/rb/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mylibrary/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/rb/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mylibrary/consumer-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/rb/consumer-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mylibrary/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/rb/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mylibrary/src/androidTest/java/com/android/mylibrary/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/androidTest/java/com/android/mylibrary/ExampleInstrumentedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mylibrary/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mylibrary/src/main/java/com/android/mylibrary/Temp.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/mylibrary/Temp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mylibrary/src/main/java/com/android/mylibrary/widget/RBHtmlTextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/mylibrary/widget/RBHtmlTextView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mylibrary/src/main/java/com/android/mylibrary/widget/RBNonSwipePageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/mylibrary/widget/RBNonSwipePageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mylibrary/src/main/res/values/attrs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/res/values/attrs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mylibrary/src/test/java/com/android/mylibrary/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/test/java/com/android/mylibrary/ExampleUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +92,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />

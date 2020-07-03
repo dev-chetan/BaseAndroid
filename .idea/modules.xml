@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/BaseAndroid.iml" filepath="$PROJECT_DIR$/.idea/modules/BaseAndroid.iml" group="BaseAndroid" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="BaseAndroid/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylibrary/mylibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/mylibrary/mylibrary.iml" group="BaseAndroid/mylibrary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylibrary/rb.iml" filepath="$PROJECT_DIR$/.idea/modules/mylibrary/rb.iml" group="BaseAndroid/rb" />
     </modules>
   </component>
 </project>
