@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6459d845-2b24-4d18-a3c0-4ea0ef549ca2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mylibrary/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mylibrary/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mylibrary/consumer-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mylibrary/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mylibrary/src/androidTest/java/com/android/mylibrary/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mylibrary/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mylibrary/src/test/java/com/android/mylibrary/ExampleUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mylibrary/src/main/java/com/android/mylibrary/Temp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mylibrary/src/main/java/com/android/mylibrary/widget/RBHtmlTextView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mylibrary/src/main/java/com/android/mylibrary/widget/RBNonSwipePageView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mylibrary/src/main/res/values/attrs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +36,14 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="valueResourceFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -41,12 +56,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mylibrary/src/main/java/com/android/mylibrary/widget" />
+    <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mylibrary/src/main/java/com/android/mylibrary/widget" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -120,5 +140,23 @@
       <updated>1593759209161</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="247" y="242" key="#PSD" timestamp="1593760377287">
+      <screen x="0" y="23" width="1920" height="983" />
+    </state>
+    <state x="247" y="242" key="#PSD/0.23.1920.983@0.23.1920.983" timestamp="1593760377287" />
+    <state x="578" y="358" key="AndroidCreateXmlResourceDialog" timestamp="1593760180179">
+      <screen x="0" y="23" width="1920" height="983" />
+    </state>
+    <state x="578" y="358" key="AndroidCreateXmlResourceDialog/0.23.1920.983@0.23.1920.983" timestamp="1593760180179" />
+    <state x="269" y="253" key="psd.add.library.dependency.panel.dimension" timestamp="1593760365418">
+      <screen x="0" y="23" width="1920" height="983" />
+    </state>
+    <state x="269" y="253" key="psd.add.library.dependency.panel.dimension/0.23.1920.983@0.23.1920.983" timestamp="1593760365418" />
+    <state x="408" y="156" key="psd.add.module.dependency.panel.dimension" timestamp="1593760375109">
+      <screen x="0" y="23" width="1920" height="983" />
+    </state>
+    <state x="408" y="156" key="psd.add.module.dependency.panel.dimension/0.23.1920.983@0.23.1920.983" timestamp="1593760375109" />
   </component>
 </project>
