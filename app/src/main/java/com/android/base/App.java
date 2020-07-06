@@ -16,7 +16,6 @@ public class App extends Application {
         //Must be required
         AppConfig.getInstance().setApplicationId(BuildConfig.APPLICATION_ID);
 
-
         //GetScreen Width and Height
         int widthPixels = Resources.getSystem().getDisplayMetrics().widthPixels;
         int heightPixels = Resources.getSystem().getDisplayMetrics().heightPixels;

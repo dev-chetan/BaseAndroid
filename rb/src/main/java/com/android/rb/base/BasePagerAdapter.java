@@ -38,15 +38,15 @@ public abstract class BasePagerAdapter extends PagerAdapter {
         return (view == object);
     }
 
-    public void navigateTo(Class<?> cls) {
+    protected void navigateTo(Class<?> cls) {
         BaseHelper.navigateTo(cls, getContext());
     }
 
-    public void navigateTo(Intent intent) {
+    protected void navigateTo(Intent intent) {
         BaseHelper.navigateTo(intent, getContext());
     }
 
-    public void navigateTo(Intent intent, int requestCode) {
+    protected void navigateTo(Intent intent, int requestCode) {
         BaseHelper.navigateTo(intent, requestCode, getContext());
     }
 
@@ -62,19 +62,19 @@ public abstract class BasePagerAdapter extends PagerAdapter {
         }
     }
 
-    public Context getContext() {
+    protected Context getContext() {
         return context;
     }
 
-    Drawable getMyDrawable(int drawable) {
+    protected Drawable getMyDrawable(int drawable) {
         return BaseHelper.getMyDrawable(drawable, getContext());
     }
 
-    void loadNetworkImage(String url, ImageView imageView) {
+    protected void loadNetworkImage(String url, ImageView imageView) {
         BaseHelper.loadNetworkImage(url, imageView, getContext());
     }
 
-    void loadStorageImage(String url, ImageView imageView) {
+    protected void loadStorageImage(String url, ImageView imageView) {
         BaseHelper.loadStorageImage(url, imageView, getContext());
     }
 
