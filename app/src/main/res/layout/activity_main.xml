@@ -5,11 +5,25 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.android.mylibrary.widget.RBHtmlTextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:animateLayoutChanges="true"
         android:text="@string/app_name">
 
-    </com.android.mylibrary.widget.RBHtmlTextView>
+    </ImageView>
+
+
+    <Button
+        android:id="@+id/btnClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Click">
+
+    </Button>
 
 </RelativeLayout>

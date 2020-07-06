@@ -1,4 +1,4 @@
-package com.android.mylibrary.widget;
+package com.android.rb.widget;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewpager.widget.ViewPager;
 
-import com.android.mylibrary.R;
+import com.android.rb.R;
 
 public class RBNonSwipePageView extends ViewPager {
 

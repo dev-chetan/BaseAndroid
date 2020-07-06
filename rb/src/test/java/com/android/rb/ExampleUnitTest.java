@@ -1,4 +1,4 @@
-package com.android.mylibrary;
+package com.android.rb;
 
 import org.junit.Test;
 

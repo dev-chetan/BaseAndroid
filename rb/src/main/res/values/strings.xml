@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_page_not_found">Page Not Found</string>
+    <string name="txt_cancel">Cancel</string>
+    <string name="txt_crop">Crop</string>
+    <string name="txt_ok">OK</string>
+    <string name="txt_internet_warning">No internet connection. Make sure that Wi-Fi or mobile bottomSheetData is turned on, then try again</string>
+    <string name="txt_image_limit">Image limit is only 5</string>
+    <string name="txt_permission_deny">Permission Deny</string>
+</resources>

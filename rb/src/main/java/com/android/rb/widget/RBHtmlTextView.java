@@ -1,4 +1,4 @@
-package com.android.mylibrary.widget;
+package com.android.rb.widget;
 
 import android.content.Context;
 import android.os.Build;
