@@ -100,7 +100,7 @@ public abstract class BaseFragment extends Fragment {
         BaseHelper.hide();
     }
 
-    Drawable getMyDrawable(int drawable) {
+    protected Drawable getMyDrawable(int drawable) {
         return BaseHelper.getMyDrawable(drawable, getContext());
     }
 
@@ -116,23 +116,23 @@ public abstract class BaseFragment extends Fragment {
         BaseHelper.toast(msg, getContext());
     }
 
-    void loadStorageImage(String url, ImageView imageView) {
+    protected void loadStorageImage(String url, ImageView imageView) {
         BaseHelper.loadStorageImage(url, imageView, getContext());
     }
 
-    void loadNetworkImage(String url, ImageView imageView) {
+    protected void loadNetworkImage(String url, ImageView imageView) {
         BaseHelper.loadNetworkImage(url, imageView, getContext());
     }
 
-    void loadNetworkProfile(String url, ImageView imageView) {
+    protected void loadNetworkProfile(String url, ImageView imageView) {
         BaseHelper.loadNetworkProfile(url, imageView, getContext());
     }
 
-    void loadWebPage(String url) {
+    protected void loadWebPage(String url) {
         BaseHelper.loadWebPage(getContext(), url);
     }
 
-    void loadPdf(String url) {
+    protected void loadPdf(String url) {
         BaseHelper.loadPdf(getContext(), url);
     }
 
