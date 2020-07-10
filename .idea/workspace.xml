@@ -10,28 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6459d845-2b24-4d18-a3c0-4ea0ef549ca2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_experimental_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager2_viewpager2_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_2_0_beta01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/adapter/SelectorAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helper/BottomSheetHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/models/BottomSheetData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rb/src/main/res/drawable/ic_baseline_radio_button_checked_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rb/src/main/res/drawable/ic_baseline_radio_button_unchecked_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rb/src/main/res/layout/bottom_sheet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rb/src/main/res/layout/item_selector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/mylibrary/rb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/mylibrary/rb.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rb/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/rb/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,14 +180,22 @@
       <option name="project" value="LOCAL" />
       <updated>1594198352874</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added BottomSheet.">
+      <created>1594357408607</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1594357408607</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Some Changes" />
     <MESSAGE value="Added Base Adapter" />
     <MESSAGE value="Some changes like modifier." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some changes like modifier." />
+    <MESSAGE value="Added BottomSheet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added BottomSheet." />
   </component>
   <component name="WindowStateProjectService">
     <state x="247" y="242" key="#PSD" timestamp="1593760377287">
@@ -235,10 +222,10 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="578" y="358" key="AndroidCreateXmlResourceDialog/0.23.1920.983@0.23.1920.983" timestamp="1594014414536" />
-    <state x="366" y="106" key="CommitChangelistDialog2" timestamp="1594198352229">
+    <state x="366" y="106" key="CommitChangelistDialog2" timestamp="1594357407901">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="366" y="106" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1594198352229" />
+    <state x="366" y="106" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1594357407901" />
     <state width="1395" height="393" key="GridCell.Tab.0.bottom" timestamp="1594019311070">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
@@ -255,10 +242,10 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state width="1395" height="393" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1594019311070" />
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1594198356005">
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1594357410419">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1594198356005" />
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1594357410419" />
     <state x="422" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1594267689961">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
