@@ -1,5 +1,6 @@
 package com.android.rb.comman;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -45,6 +46,8 @@ import com.android.rb.helper.DialogHelper;
 import com.android.rb.helper.DialogStatus;
 import com.android.rb.helper.ImageCompress;
 import com.android.rb.helper.LoadingDialog;
+import com.android.rb.helper.PermissionHandler;
+import com.android.rb.helper.PermissionUtil;
 import com.android.rb.helper.Preferences;
 import com.android.rb.interf.ImageReceiveListener;
 import com.bumptech.glide.Glide;
@@ -579,42 +582,39 @@ public class BaseHelper {
 
     //Image processing
     public static void selectImage(final AppCompatActivity activity, final File cameraFile, final boolean isCrop, final Context context) {
+        String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE
+                , Manifest.permission.WRITE_EXTERNAL_STORAGE
+                , Manifest.permission.CAMERA};
+        PermissionUtil.permission(activity, perms, new PermissionHandler() {
+            @Override
+            public void onGranted() {
+                openGallery(activity, false, isCrop, context);
+            }
 
-
-        openGallery(activity, false, isCrop, context);
-//        String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE
-//                , Manifest.permission.WRITE_EXTERNAL_STORAGE
-//                , Manifest.permission.CAMERA};
-//        PermissionUtil.permission(activity, perms, new PermissionHandler() {
-//            @Override
-//            public void onGranted() {
-//
-//            }
-//
-//            @Override
-//            public void onDenied() {
-//                toast(context.getString(R.string.txt_permission_deny), context);
-//            }
-//        });
+            @Override
+            public void onDenied() {
+                toast(context.getString(R.string.txt_permission_deny), context);
+            }
+        });
     }
-//
-//    //Image processing
-//    public static void selectImage(final Fragment fragment, final File cameraFile, final boolean isCrop, final Context context) {
-//        String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE
-//                , Manifest.permission.WRITE_EXTERNAL_STORAGE
-//                , Manifest.permission.CAMERA};
-//        PermissionUtil.permission(context, perms, new PermissionHandler() {
-//            @Override
-//            public void onGranted() {
-//                openGallery(fragment, false, isCrop, context);
-//            }
-//
-//            @Override
-//            public void onDenied() {
-//                toast(context.getString(R.string.txt_permission_deny), context);
-//            }
-//        });
-//    }
+
+    //Image processing
+    public static void selectImage(final Fragment fragment, final File cameraFile, final boolean isCrop, final Context context) {
+        String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE
+                , Manifest.permission.WRITE_EXTERNAL_STORAGE
+                , Manifest.permission.CAMERA};
+        PermissionUtil.permission(((AppCompatActivity) context), perms, new PermissionHandler() {
+            @Override
+            public void onGranted() {
+                openGallery(fragment, false, isCrop, context);
+            }
+
+            @Override
+            public void onDenied() {
+                toast(context.getString(R.string.txt_permission_deny), context);
+            }
+        });
+    }
 
 
     private static void openCamera(File cameraFile, boolean isFront, boolean isCrop, Context context) {

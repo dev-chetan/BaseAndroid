@@ -253,16 +253,16 @@ public abstract class BaseFragment extends Fragment {
 //        return BaseHelper.getBasicAuth(getContext());
 //    }
 //
-//    protected void selectImage(Fragment fragment, ImageReceiveListener listener, boolean isCrop) {
-//        this.listener = listener;
-//        cameraFile = BaseHelper.getFilePath(getContext());
-//        BaseHelper.selectImage(fragment, cameraFile, isCrop, getContext());
-//    }
-//
-//    protected String compressImage(String imagePath) {
-//        return BaseHelper.compressImage(getContext(), imagePath);
-//    }
-//
+protected void selectImage(Fragment fragment, ImageReceiveListener listener, boolean isCrop) {
+    this.listener = listener;
+    cameraFile = BaseHelper.getFilePath(getContext());
+    BaseHelper.selectImage(fragment, cameraFile, isCrop, getContext());
+}
+
+    protected String compressImage(String imagePath) {
+        return BaseHelper.compressImage(getContext(), imagePath);
+    }
+
 //    protected RequestBody getRequestBody(String value) {
 //        return BaseHelper.getRequestBody(value);
 //    }

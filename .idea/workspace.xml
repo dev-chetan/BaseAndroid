@@ -11,6 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6459d845-2b24-4d18-a3c0-4ea0ef549ca2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BaseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BaseFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/comman/BaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/comman/BaseHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594357408607</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added Location Helpers.">
+      <created>1594360826605</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1594360826605</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -195,7 +204,8 @@
     <MESSAGE value="Added Base Adapter" />
     <MESSAGE value="Some changes like modifier." />
     <MESSAGE value="Added BottomSheet." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added BottomSheet." />
+    <MESSAGE value="Added Location Helpers." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Location Helpers." />
   </component>
   <component name="WindowStateProjectService">
     <state x="247" y="242" key="#PSD" timestamp="1593760377287">
@@ -222,10 +232,10 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="578" y="358" key="AndroidCreateXmlResourceDialog/0.23.1920.983@0.23.1920.983" timestamp="1594014414536" />
-    <state x="366" y="106" key="CommitChangelistDialog2" timestamp="1594357407901">
+    <state x="366" y="106" key="CommitChangelistDialog2" timestamp="1594360826359">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="366" y="106" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1594357407901" />
+    <state x="366" y="106" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1594360826359" />
     <state width="1395" height="393" key="GridCell.Tab.0.bottom" timestamp="1594019311070">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
@@ -242,10 +252,10 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state width="1395" height="393" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1594019311070" />
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1594357410419">
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1594360829942">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1594357410419" />
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1594360829942" />
     <state x="422" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1594267689961">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
@@ -262,9 +272,9 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="408" y="156" key="psd.add.module.dependency.panel.dimension/0.23.1920.983@0.23.1920.983" timestamp="1593760375109" />
-    <state x="454" y="117" key="refactoring.ChangeSignatureDialog" timestamp="1593779292594">
+    <state x="454" y="117" key="refactoring.ChangeSignatureDialog" timestamp="1594361313973">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="454" y="117" key="refactoring.ChangeSignatureDialog/0.23.1920.983@0.23.1920.983" timestamp="1593779292594" />
+    <state x="454" y="117" key="refactoring.ChangeSignatureDialog/0.23.1920.983@0.23.1920.983" timestamp="1594361313973" />
   </component>
 </project>
