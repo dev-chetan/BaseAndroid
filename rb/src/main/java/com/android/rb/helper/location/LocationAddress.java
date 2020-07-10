@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
+import com.google.gson.Gson;
+
 import java.util.List;
 import java.util.Locale;
 
@@ -33,6 +35,7 @@ public class LocationAddress {
                         message.what = 1;
                         Bundle bundle = new Bundle();
                         bundle.putString("address", result);
+                        bundle.putString("json", new Gson().toJson(addressList));
                         message.setData(bundle);
                     }
                     message.sendToTarget();
