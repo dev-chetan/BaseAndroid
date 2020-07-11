@@ -10,14 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6459d845-2b24-4d18-a3c0-4ea0ef549ca2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/mylibrary/rb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/mylibrary/rb.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rb/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BaseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BaseAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BaseAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BaseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BaseFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BasePagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BasePagerAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/comman/BaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/comman/BaseHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -237,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594452757735</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added Calling.">
+      <created>1594459303156</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1594459303156</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -250,7 +250,8 @@
     <MESSAGE value="Some Changes" />
     <MESSAGE value="Just Change Location Code." />
     <MESSAGE value="Change Bottom View Colors." />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Bottom View Colors." />
+    <MESSAGE value="Added Calling." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Calling." />
   </component>
   <component name="WindowStateProjectService">
     <state x="247" y="242" key="#PSD" timestamp="1593760377287">
@@ -281,10 +282,10 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="578" y="358" key="AndroidCreateXmlResourceDialog/0.23.1920.983@0.23.1920.983" timestamp="1594014414536" />
-    <state x="366" y="106" key="CommitChangelistDialog2" timestamp="1594452756843">
+    <state x="366" y="106" key="CommitChangelistDialog2" timestamp="1594459302704">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="366" y="106" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1594452756843" />
+    <state x="366" y="106" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1594459302704" />
     <state width="1395" height="393" key="GridCell.Tab.0.bottom" timestamp="1594372094541">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
@@ -301,10 +302,10 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state width="1395" height="393" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1594372094540" />
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1594452759534">
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1594459304410">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1594452759534" />
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1594459304410" />
     <state x="100" y="123" width="1237" height="761" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1594382667185">
       <screen x="0" y="23" width="1920" height="983" />
     </state>

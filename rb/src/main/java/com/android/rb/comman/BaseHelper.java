@@ -346,9 +346,20 @@ public class BaseHelper {
         return Preferences.getValueString(context, key);
     }
 
-    public static void phoneCall(String number, Context context) {
-        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
-        context.startActivity(intent);
+    public static void phoneCall(final String number, final Context context) {
+        String[] perms = {Manifest.permission.CALL_PHONE};
+        PermissionUtil.permission(((AppCompatActivity) context), perms, new PermissionHandler() {
+            @Override
+            public void onGranted() {
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
+                context.startActivity(intent);
+            }
+
+            @Override
+            public void onDenied() {
+                toast(context.getString(R.string.txt_permission_deny), context);
+            }
+        });
     }
 
     public static boolean getPrefBool(String key, Context context) {
