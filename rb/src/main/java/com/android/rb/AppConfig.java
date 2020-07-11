@@ -11,6 +11,24 @@ public class AppConfig {
     private int profilePlaceholder = R.drawable.img_blank_profile;
     private int noImagePlaceholder = R.drawable.img_no_image;
     private int txtPageNotFound = R.string.txt_page_not_found;
+    private int colorPrimary = android.R.color.white;
+    private int colorBackground = android.R.color.white;
+
+    public int getColorBackground() {
+        return colorBackground;
+    }
+
+    public void setColorBackground(int colorBackground) {
+        this.colorBackground = colorBackground;
+    }
+
+    public int getColorPrimary() {
+        return colorPrimary;
+    }
+
+    public void setColorPrimary(int colorPrimary) {
+        this.colorPrimary = colorPrimary;
+    }
 
     private String APP_NAME = "AppName";
 

@@ -9,9 +9,26 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6459d845-2b24-4d18-a3c0-4ea0ef549ca2" name="Default Changelist" comment="">
+    <list default="true" id="6459d845-2b24-4d18-a3c0-4ea0ef549ca2" name="Default Changelist" comment="Just Change Location Code.">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_logging_interceptor_4_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_4_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_2_2_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_converter_gson_2_6_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_retrofit_2_6_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_annotation_javax_annotation_api_1_3_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_13_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_50_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_50_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/mylibrary/rb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/mylibrary/rb.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helper/location/LocationAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helper/location/LocationAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/rb/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helper/BottomSheetHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helper/BottomSheetHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/res/layout/bottom_sheet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/res/layout/bottom_sheet.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +80,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/rb/src/main/java/com/android/rb" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -71,8 +88,12 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.android.rb.base" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rb/src/main/java/com/android/rb" />
+      <recent name="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helper" />
+      <recent name="$PROJECT_DIR$/rb/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/rb/src/main/res/values" />
+      <recent name="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helpers" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.android.rb.base" />
@@ -81,12 +102,8 @@
       <recent name="com.android.rb.comman" />
       <recent name="com.android.rb.helpers" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helper" />
-      <recent name="$PROJECT_DIR$/rb/src/main/res/drawable" />
-      <recent name="$PROJECT_DIR$/rb/src/main/res/values" />
-      <recent name="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helpers" />
-      <recent name="$PROJECT_DIR$/mylibrary/src/main/java/com/android/mylibrary/widget" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.android.rb.base" />
     </key>
   </component>
   <component name="RunManager">
@@ -216,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594374417331</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Just Change Location Code.">
+      <created>1594378184020</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1594378184020</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -227,17 +251,18 @@
     <MESSAGE value="Added Select Image." />
     <MESSAGE value="Added RBVerticalTextView." />
     <MESSAGE value="Some Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some Changes" />
+    <MESSAGE value="Just Change Location Code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Just Change Location Code." />
   </component>
   <component name="WindowStateProjectService">
     <state x="247" y="242" key="#PSD" timestamp="1593760377287">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="247" y="242" key="#PSD/0.23.1920.983@0.23.1920.983" timestamp="1593760377287" />
-    <state x="564" y="194" key="#com.intellij.ide.util.MemberChooser" timestamp="1594012484471">
+    <state x="564" y="194" key="#com.intellij.ide.util.MemberChooser" timestamp="1594452527397">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="564" y="194" key="#com.intellij.ide.util.MemberChooser/0.23.1920.983@0.23.1920.983" timestamp="1594012484471" />
+    <state x="564" y="194" key="#com.intellij.ide.util.MemberChooser/0.23.1920.983@0.23.1920.983" timestamp="1594452527397" />
     <state x="515" y="370" width="473" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1594361615311">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
@@ -258,10 +283,10 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="578" y="358" key="AndroidCreateXmlResourceDialog/0.23.1920.983@0.23.1920.983" timestamp="1594014414536" />
-    <state x="366" y="106" key="CommitChangelistDialog2" timestamp="1594374416704">
+    <state x="366" y="106" key="CommitChangelistDialog2" timestamp="1594452581600">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="366" y="106" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1594374416704" />
+    <state x="366" y="106" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1594452581600" />
     <state width="1395" height="393" key="GridCell.Tab.0.bottom" timestamp="1594372094541">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
@@ -278,10 +303,14 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state width="1395" height="393" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1594372094540" />
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1594374419153">
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1594378185198">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1594374419153" />
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1594378185198" />
+    <state x="100" y="123" width="1237" height="761" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1594382667185">
+      <screen x="0" y="23" width="1920" height="983" />
+    </state>
+    <state x="100" y="123" width="1237" height="761" key="com.android.tools.idea.avdmanager.AvdListDialog/0.23.1920.983@0.23.1920.983" timestamp="1594382667185" />
     <state x="422" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1594372561416">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
