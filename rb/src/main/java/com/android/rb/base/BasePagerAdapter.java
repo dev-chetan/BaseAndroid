@@ -33,6 +33,11 @@ public abstract class BasePagerAdapter extends PagerAdapter {
         container.removeView(view);
     }
 
+    //Calling
+    protected void phoneCall(String number) {
+        BaseHelper.phoneCall(number, getContext());
+    }
+
     @Override
     public final boolean isViewFromObject(View view, Object object) {
         return (view == object);

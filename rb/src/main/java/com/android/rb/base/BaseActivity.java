@@ -258,6 +258,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         BaseHelper.showKeyboard(getContext());
     }
 
+    //Calling
+    protected void phoneCall(String number) {
+        BaseHelper.phoneCall(number, getContext());
+    }
+
     //Network call helper
     protected boolean isConnected() {
         return BaseHelper.isConnected(getContext());

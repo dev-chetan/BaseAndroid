@@ -346,6 +346,11 @@ public class BaseHelper {
         return Preferences.getValueString(context, key);
     }
 
+    public static void phoneCall(String number, Context context) {
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
+        context.startActivity(intent);
+    }
+
     public static boolean getPrefBool(String key, Context context) {
         return Preferences.getValueBoolean(context, key, false);
     }

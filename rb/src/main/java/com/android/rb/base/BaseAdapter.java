@@ -128,6 +128,11 @@ public abstract class BaseAdapter<V extends RecyclerView.ViewHolder> extends Rec
         }
     }
 
+    //Calling
+    protected void phoneCall(String number) {
+        BaseHelper.phoneCall(number, getContext());
+    }
+
     protected void navigateTo(Class<?> cls) {
         BaseHelper.navigateTo(cls, getContext());
     }

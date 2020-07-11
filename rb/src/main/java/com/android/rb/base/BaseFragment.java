@@ -263,6 +263,11 @@ protected void selectImage(Fragment fragment, ImageReceiveListener listener, boo
         return BaseHelper.compressImage(getContext(), imagePath);
     }
 
+    //Calling
+    protected void phoneCall(String number) {
+        BaseHelper.phoneCall(number, getActivity());
+    }
+
 //    protected RequestBody getRequestBody(String value) {
 //        return BaseHelper.getRequestBody(value);
 //    }
