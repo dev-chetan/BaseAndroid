@@ -53,7 +53,7 @@ public class SelectorAdapter extends BaseAdapter<SelectorAdapter.ViewHolder> {
         holder.binding.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isMultiple) {
+                if (!isMultiple) {
                     for (int i = 0; i < arrayList.size(); i++) {
                         arrayList.get(i).setSelect(false);
                     }
@@ -74,7 +74,7 @@ public class SelectorAdapter extends BaseAdapter<SelectorAdapter.ViewHolder> {
         holder.binding.imgSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isMultiple) {
+                if (!isMultiple) {
                     for (int i = 0; i < arrayList.size(); i++) {
                         arrayList.get(i).setSelect(false);
                     }
@@ -90,7 +90,6 @@ public class SelectorAdapter extends BaseAdapter<SelectorAdapter.ViewHolder> {
                     }
                     notifyDataSetChanged();
                 }
-
             }
         });
     }
