@@ -2,6 +2,7 @@ package com.android.rb.base;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import android.widget.ImageView;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.android.rb.comman.BaseHelper;
+
+import java.io.File;
 
 public abstract class BasePagerAdapter extends PagerAdapter {
     private Context context;
@@ -41,6 +44,10 @@ public abstract class BasePagerAdapter extends PagerAdapter {
     @Override
     public final boolean isViewFromObject(View view, Object object) {
         return (view == object);
+    }
+
+    protected File saveBitmap(Bitmap bitmap) {
+        return BaseHelper.saveBitmap(getContext(), bitmap);
     }
 
     protected void navigateTo(Class<?> cls) {

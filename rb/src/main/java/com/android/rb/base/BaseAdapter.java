@@ -2,6 +2,7 @@ package com.android.rb.base;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.text.Spanned;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.rb.comman.BaseHelper;
 
+import java.io.File;
 import java.util.Calendar;
 
 public abstract class BaseAdapter<V extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<V> {
@@ -61,6 +63,10 @@ public abstract class BaseAdapter<V extends RecyclerView.ViewHolder> extends Rec
     }
 
     protected abstract int getListCounter();
+
+    protected File saveBitmap(Bitmap bitmap) {
+        return BaseHelper.saveBitmap(getContext(), bitmap);
+    }
 
     protected void show() {
         BaseHelper.show(getContext());

@@ -67,6 +67,10 @@ import com.zhihu.matisse.internal.entity.CaptureStrategy;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.net.URLEncoder;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -87,6 +91,23 @@ public class BaseHelper {
     private static final int REQUEST_CAMERA_IMAGE_CROP = 1004;
 
     private static LoadingDialog loadingDialog;
+
+
+    public static File saveBitmap(Context context, Bitmap bitmap) {
+        File file = getFilePath(context);
+        try {
+            OutputStream output = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, output);
+            output.flush();
+            output.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return file;
+    }
+
 
     //Cap word
     public static String capWord(String word) {

@@ -2,6 +2,7 @@ package com.android.rb.base;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
 import android.net.Uri;
@@ -83,6 +84,10 @@ public abstract class BaseFragment extends Fragment {
     }
 
     protected void setListener() {
+    }
+
+    protected File saveBitmap(Bitmap bitmap) {
+        return BaseHelper.saveBitmap(getContext(), bitmap);
     }
 
     protected void setToolbar() {
