@@ -19,14 +19,16 @@ import java.util.List;
 
 public class SelectorAdapter extends BaseAdapter<SelectorAdapter.ViewHolder> {
 
-    private List<BottomSheetData> arrayList;
+    public List<BottomSheetData> arrayList;
     private BottomSheetDialog bottomSheetDialog;
     BottomSheetHelper.OnBottomSheetResult onBottomSheetResult;
+    private boolean isMultiple;
 
-    public SelectorAdapter(List<BottomSheetData> arrayList, BottomSheetDialog bottomSheetDialog, BottomSheetHelper.OnBottomSheetResult onBottomSheetResult) {
+    public SelectorAdapter(List<BottomSheetData> arrayList, BottomSheetDialog bottomSheetDialog, BottomSheetHelper.OnBottomSheetResult onBottomSheetResult, boolean isMultiple) {
         this.arrayList = arrayList;
         this.bottomSheetDialog = bottomSheetDialog;
         this.onBottomSheetResult = onBottomSheetResult;
+        this.isMultiple = isMultiple;
     }
 
     @Override
@@ -51,25 +53,44 @@ public class SelectorAdapter extends BaseAdapter<SelectorAdapter.ViewHolder> {
         holder.binding.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for (int i = 0; i < arrayList.size(); i++) {
-                    arrayList.get(i).setSelect(false);
+                if (isMultiple) {
+                    for (int i = 0; i < arrayList.size(); i++) {
+                        arrayList.get(i).setSelect(false);
+                    }
+                    arrayList.get(position).setSelect(true);
+                    notifyDataSetChanged();
+                    onBottomSheetResult.onResult(arrayList);
+                    bottomSheetDialog.dismiss();
+                } else {
+                    if (arrayList.get(position).isSelect()) {
+                        arrayList.get(position).setSelect(false);
+                    } else {
+                        arrayList.get(position).setSelect(true);
+                    }
+                    notifyDataSetChanged();
                 }
-                arrayList.get(position).setSelect(true);
-                notifyDataSetChanged();
-                onBottomSheetResult.onResult(arrayList);
-                bottomSheetDialog.dismiss();
             }
         });
         holder.binding.imgSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for (int i = 0; i < arrayList.size(); i++) {
-                    arrayList.get(i).setSelect(false);
+                if (isMultiple) {
+                    for (int i = 0; i < arrayList.size(); i++) {
+                        arrayList.get(i).setSelect(false);
+                    }
+                    arrayList.get(position).setSelect(true);
+                    notifyDataSetChanged();
+                    onBottomSheetResult.onResult(arrayList);
+                    bottomSheetDialog.dismiss();
+                } else {
+                    if (arrayList.get(position).isSelect()) {
+                        arrayList.get(position).setSelect(false);
+                    } else {
+                        arrayList.get(position).setSelect(true);
+                    }
+                    notifyDataSetChanged();
                 }
-                arrayList.get(position).setSelect(true);
-                notifyDataSetChanged();
-                onBottomSheetResult.onResult(arrayList);
-                bottomSheetDialog.dismiss();
+
             }
         });
     }

@@ -10,16 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6459d845-2b24-4d18-a3c0-4ea0ef549ca2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/rb/src/main/res/drawable/drawable_line_btn.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/mylibrary/rb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/mylibrary/rb.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/base/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/base/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/adapter/SelectorAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/adapter/SelectorAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helper/BottomSheetHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helper/BottomSheetHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/res/layout/bottom_sheet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/res/layout/bottom_sheet.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594459303156</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added SaveBitMap.">
+      <created>1594700457128</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1594700457128</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -259,7 +277,8 @@
     <MESSAGE value="Just Change Location Code." />
     <MESSAGE value="Change Bottom View Colors." />
     <MESSAGE value="Added Calling." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Calling." />
+    <MESSAGE value="Added SaveBitMap." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added SaveBitMap." />
   </component>
   <component name="WindowStateProjectService">
     <state x="247" y="242" key="#PSD" timestamp="1593760377287">
@@ -282,37 +301,44 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="339" y="265" key="AndroidCreateResourceDirectoryDialog/0.23.1920.983@0.23.1920.983" timestamp="1593774576891" />
-    <state x="339" y="265" key="AndroidCreateResourceFileDialog" timestamp="1594357203241">
-      <screen x="0" y="23" width="1920" height="983" />
+    <state x="241" y="179" key="AndroidCreateResourceFileDialog" timestamp="1594719728320">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="241" y="179" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1594719728320" />
     <state x="339" y="265" key="AndroidCreateResourceFileDialog/0.23.1920.983@0.23.1920.983" timestamp="1594357203241" />
     <state x="578" y="358" key="AndroidCreateXmlResourceDialog" timestamp="1594014414536">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="578" y="358" key="AndroidCreateXmlResourceDialog/0.23.1920.983@0.23.1920.983" timestamp="1594014414536" />
-    <state x="366" y="106" key="CommitChangelistDialog2" timestamp="1594459302704">
-      <screen x="0" y="23" width="1920" height="983" />
+    <state x="260" y="0" key="CommitChangelistDialog2" timestamp="1594700455293">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="260" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1594700455293" />
     <state x="366" y="106" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1594459302704" />
-    <state width="1395" height="393" key="GridCell.Tab.0.bottom" timestamp="1594372094541">
-      <screen x="0" y="23" width="1920" height="983" />
+    <state width="1306" height="370" key="GridCell.Tab.0.bottom" timestamp="1594720970158">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1306" height="370" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594720970158" />
     <state width="1395" height="393" key="GridCell.Tab.0.bottom/0.23.1920.983@0.23.1920.983" timestamp="1594372094541" />
-    <state width="1395" height="393" key="GridCell.Tab.0.center" timestamp="1594372094540">
-      <screen x="0" y="23" width="1920" height="983" />
+    <state width="1306" height="370" key="GridCell.Tab.0.center" timestamp="1594720970158">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1306" height="370" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1594720970158" />
     <state width="1395" height="393" key="GridCell.Tab.0.center/0.23.1920.983@0.23.1920.983" timestamp="1594372094540" />
-    <state width="1395" height="393" key="GridCell.Tab.0.left" timestamp="1594372094540">
-      <screen x="0" y="23" width="1920" height="983" />
+    <state width="1306" height="370" key="GridCell.Tab.0.left" timestamp="1594720970158">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1306" height="370" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1594720970158" />
     <state width="1395" height="393" key="GridCell.Tab.0.left/0.23.1920.983@0.23.1920.983" timestamp="1594372094540" />
-    <state width="1395" height="393" key="GridCell.Tab.0.right" timestamp="1594372094540">
-      <screen x="0" y="23" width="1920" height="983" />
+    <state width="1306" height="370" key="GridCell.Tab.0.right" timestamp="1594720970158">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1306" height="370" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1594720970158" />
     <state width="1395" height="393" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1594372094540" />
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1594459304410">
-      <screen x="0" y="23" width="1920" height="983" />
+    <state x="250" y="163" key="Vcs.Push.Dialog.v2" timestamp="1594700461221">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="250" y="163" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1594700461221" />
     <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1594459304410" />
     <state x="100" y="123" width="1237" height="761" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1594382667185">
       <screen x="0" y="23" width="1920" height="983" />
@@ -338,9 +364,10 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="454" y="117" key="refactoring.ChangeSignatureDialog/0.23.1920.983@0.23.1920.983" timestamp="1594361313973" />
-    <state x="383" y="234" width="670" height="158" key="search.everywhere.popup" timestamp="1594377916532">
-      <screen x="0" y="23" width="1920" height="983" />
+    <state x="272" y="156" width="672" height="160" key="search.everywhere.popup" timestamp="1594721144836">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="272" y="156" width="672" height="160" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1594721144836" />
     <state x="383" y="234" width="670" height="158" key="search.everywhere.popup/0.23.1920.983@0.23.1920.983" timestamp="1594377916532" />
   </component>
 </project>
