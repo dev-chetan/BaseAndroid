@@ -32,15 +32,32 @@
         <RelativeLayout
             android:id="@+id/rlDivider"
             android:layout_width="match_parent"
-            android:background="#50aaaaaa"
             android:layout_height="@dimen/_1sdp"
-            android:layout_below="@+id/relTitle" />
+            android:layout_below="@+id/relTitle"
+            android:background="#50aaaaaa" />
+
+        <TextView
+            android:id="@+id/tvSave"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlDivider"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_14sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/drawable_line_btn"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:text="Save" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/rlDivider"
+            android:layout_below="@+id/tvSave"
             android:clipToPadding="false"
             android:nestedScrollingEnabled="false"
             android:paddingStart="@dimen/_8sdp"

@@ -19,6 +19,9 @@ import java.util.List;
 
 @SuppressLint("ValidFragment")
 public class BottomSheetHelper {
+
+    private boolean isMultiple = false;
+
     public interface OnBottomSheetResult {
         public void onResult(List<BottomSheetData> arrayList);
     }
@@ -27,10 +30,17 @@ public class BottomSheetHelper {
         showBottomMediaDialog(context, title, arrayList, onBottomSheetResult);
     }
 
-    private void showBottomMediaDialog(Context context, String title, List<BottomSheetData> arrayList, OnBottomSheetResult onBottomSheetResult) {
+    public BottomSheetHelper(Context context, String title, List<BottomSheetData> arrayList, OnBottomSheetResult onBottomSheetResult, boolean isMultiple) {
+        this.isMultiple = isMultiple;
+        showBottomMediaDialog(context, title, arrayList, onBottomSheetResult);
+    }
+
+    private void showBottomMediaDialog(Context context, String title, final List<BottomSheetData> arrayList, final OnBottomSheetResult onBottomSheetResult) {
         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
         @SuppressLint("InflateParams") View sheetView = ((Activity) context).getLayoutInflater().inflate(R.layout.bottom_sheet, null);
         BottomSheetBinding sheetLayoutBinding = BottomSheetBinding.bind(sheetView);
+
+        if (isMultiple) sheetLayoutBinding.tvSave.setVisibility(View.VISIBLE);
 
         if (android.R.color.white == AppConfig.getInstance().getColorPrimary()) {
             sheetLayoutBinding.tvTitle.setTextColor(context.getResources().getColor(android.R.color.black));
@@ -45,11 +55,20 @@ public class BottomSheetHelper {
 
         sheetLayoutBinding.tvTitle.setText(title);
 
-        SelectorAdapter adapter = new SelectorAdapter(arrayList, bottomSheetDialog, onBottomSheetResult);
+
+        final SelectorAdapter adapter = new SelectorAdapter(arrayList, bottomSheetDialog, onBottomSheetResult, isMultiple);
         sheetLayoutBinding.recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
         sheetLayoutBinding.recyclerView.setLayoutManager(new LinearLayoutManager(context));
+
+        sheetLayoutBinding.tvSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBottomSheetResult.onResult(adapter.arrayList);
+                bottomSheetDialog.dismiss();
+            }
+        });
 
         bottomSheetDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
