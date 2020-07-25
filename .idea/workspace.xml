@@ -10,8 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6459d845-2b24-4d18-a3c0-4ea0ef549ca2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_9_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_9_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_9_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_9_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/comman/BaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/comman/BaseHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594459303156</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Some Changes">
+      <created>1594460141271</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1594460141271</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -247,11 +259,11 @@
     <MESSAGE value="Added Location Helpers." />
     <MESSAGE value="Added Select Image." />
     <MESSAGE value="Added RBVerticalTextView." />
-    <MESSAGE value="Some Changes" />
     <MESSAGE value="Just Change Location Code." />
     <MESSAGE value="Change Bottom View Colors." />
     <MESSAGE value="Added Calling." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Calling." />
+    <MESSAGE value="Some Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some Changes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="247" y="242" key="#PSD" timestamp="1593760377287">
@@ -282,10 +294,10 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="578" y="358" key="AndroidCreateXmlResourceDialog/0.23.1920.983@0.23.1920.983" timestamp="1594014414536" />
-    <state x="366" y="106" key="CommitChangelistDialog2" timestamp="1594459302704">
+    <state x="366" y="106" key="CommitChangelistDialog2" timestamp="1594460140800">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="366" y="106" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1594459302704" />
+    <state x="366" y="106" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1594460140800" />
     <state width="1395" height="393" key="GridCell.Tab.0.bottom" timestamp="1594372094541">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
@@ -302,18 +314,18 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state width="1395" height="393" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1594372094540" />
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1594459304410">
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1594460142548">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1594459304410" />
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1594460142548" />
     <state x="100" y="123" width="1237" height="761" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1594382667185">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="100" y="123" width="1237" height="761" key="com.android.tools.idea.avdmanager.AvdListDialog/0.23.1920.983@0.23.1920.983" timestamp="1594382667185" />
-    <state x="422" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1594372561416">
+    <state x="422" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1595390029533">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="422" y="336" key="com.intellij.ide.util.TipDialog/0.23.1920.983@0.23.1920.983" timestamp="1594372561416" />
+    <state x="422" y="336" key="com.intellij.ide.util.TipDialog/0.23.1920.983@0.23.1920.983" timestamp="1595390029533" />
     <state x="404" y="260" width="695" height="486" key="find.popup" timestamp="1594010411158">
       <screen x="0" y="23" width="1920" height="983" />
     </state>

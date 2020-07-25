@@ -12,6 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.rb.comman.BaseHelper;
+import com.android.rb.helper.Preferences;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.util.Calendar;
 
@@ -55,6 +58,12 @@ public abstract class BaseAdapter<V extends RecyclerView.ViewHolder> extends Rec
     protected abstract V onCreateView(ViewGroup viewGroup, int viewType);
 
     protected abstract void bindRViewHolder(V v, int position);
+
+    protected <T> T getAuth(Class<T> type) {
+        return new Gson()
+                .fromJson(getPrefValue(Preferences.USER_DATA)
+                        , TypeToken.getParameterized(type, type).getType());
+    }
 
     protected void showInfoDialog(String msg) {
         BaseHelper.showInfoDialog(getContext(), msg);

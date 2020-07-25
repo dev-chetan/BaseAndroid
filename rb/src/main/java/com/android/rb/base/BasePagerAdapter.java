@@ -10,6 +10,9 @@ import android.widget.ImageView;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.android.rb.comman.BaseHelper;
+import com.android.rb.helper.Preferences;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 public abstract class BasePagerAdapter extends PagerAdapter {
     private Context context;
@@ -65,6 +68,12 @@ public abstract class BasePagerAdapter extends PagerAdapter {
         } else {
             return BaseHelper.getPrefValue(key, getContext());
         }
+    }
+
+    protected <T> T getAuth(Class<T> type) {
+        return new Gson()
+                .fromJson(getPrefValue(Preferences.USER_DATA)
+                        , TypeToken.getParameterized(type, type).getType());
     }
 
     protected Context getContext() {
