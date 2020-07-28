@@ -67,26 +67,31 @@ public abstract class BaseAdapter<V extends RecyclerView.ViewHolder> extends Rec
                         , TypeToken.getParameterized(type, type).getType());
     }
 
+    protected <T> void setAuth(Context context, T cls) {
+        String s = new Gson().toJson(cls);
+        Preferences.setValue(context, Preferences.USER_DATA, s);
+    }
+
     protected void showInfoDialog(String msg) {
-        BaseHelper.showInfoDialog(getContext(), msg);
+        BaseHelper.getInstance().showInfoDialog(getContext(), msg);
     }
 
     protected abstract int getListCounter();
 
     protected File saveBitmap(Bitmap bitmap) {
-        return BaseHelper.saveBitmap(getContext(), bitmap);
+        return BaseHelper.getInstance().saveBitmap(getContext(), bitmap);
     }
 
     protected void show() {
-        BaseHelper.show(getContext());
+        BaseHelper.getInstance().show(getContext());
     }
 
     protected void hide() {
-        BaseHelper.hide();
+        BaseHelper.getInstance().hide();
     }
 
     protected void toast(String msg) {
-        BaseHelper.toast(msg, getContext());
+        BaseHelper.getInstance().toast(msg, getContext());
     }
 
     protected Context getContext() {
@@ -94,20 +99,20 @@ public abstract class BaseAdapter<V extends RecyclerView.ViewHolder> extends Rec
     }
 
     protected String capWord(String word) {
-        return BaseHelper.capWord(word);
+        return BaseHelper.getInstance().capWord(word);
     }
 
     protected Drawable getMyDrawable(int drawable) {
-        return BaseHelper.getMyDrawable(drawable, getContext());
+        return BaseHelper.getInstance().getMyDrawable(drawable, getContext());
     }
 
     protected Spanned getHtmlContent(String str) {
-        return BaseHelper.getHtmlContent(str);
+        return BaseHelper.getInstance().getHtmlContent(str);
     }
 
     //Network call helper
     protected boolean isConnected() {
-        return BaseHelper.isConnected(getContext());
+        return BaseHelper.getInstance().isConnected(getContext());
     }
 
 //    public ApiInterface getApiInterface() {
@@ -132,88 +137,88 @@ public abstract class BaseAdapter<V extends RecyclerView.ViewHolder> extends Rec
 //    }
 
     protected String getPrefValue(String key) {
-        return BaseHelper.getPrefValue(key, getContext());
+        return BaseHelper.getInstance().getPrefValue(key, getContext());
     }
 
     protected String getLangValue(String key) {
-        if (BaseHelper.getPrefValue(key, getContext()).equals("")) {
+        if (BaseHelper.getInstance().getPrefValue(key, getContext()).equals("")) {
             return "Empty value";
         } else {
-            return BaseHelper.getPrefValue(key, getContext());
+            return BaseHelper.getInstance().getPrefValue(key, getContext());
         }
     }
 
     //Calling
     protected void phoneCall(String number) {
-        BaseHelper.phoneCall(number, getContext());
+        BaseHelper.getInstance().phoneCall(number, getContext());
     }
 
     protected void navigateTo(Class<?> cls) {
-        BaseHelper.navigateTo(cls, getContext());
+        BaseHelper.getInstance().navigateTo(cls, getContext());
     }
 
     protected void navigateTo(Intent intent, int requestCode) {
-        BaseHelper.navigateTo(intent, requestCode, getContext());
+        BaseHelper.getInstance().navigateTo(intent, requestCode, getContext());
     }
 
     protected void navigateTo(Intent intent) {
-        BaseHelper.navigateTo(intent, getContext());
+        BaseHelper.getInstance().navigateTo(intent, getContext());
     }
 
     protected int getMyColor(int color) {
-        return BaseHelper.getMyColor(color, getContext());
+        return BaseHelper.getInstance().getMyColor(color, getContext());
     }
 
     protected LinearLayoutManager setLinearLayoutManager(RecyclerView recyclerView) {
-        return BaseHelper.setLinearLayoutManager(recyclerView, getContext());
+        return BaseHelper.getInstance().setLinearLayoutManager(recyclerView, getContext());
     }
 
     protected LinearLayoutManager setLinearLayoutManagerHorizontal(RecyclerView recyclerView) {
-        return BaseHelper.setLinearLayoutManagerHorizontal(recyclerView, getContext());
+        return BaseHelper.getInstance().setLinearLayoutManagerHorizontal(recyclerView, getContext());
     }
 
     protected LinearLayoutManager setGridLayoutManager(RecyclerView recyclerView, int noOfColumn) {
-        return BaseHelper.setGridLayoutManager(recyclerView, noOfColumn, getContext());
+        return BaseHelper.getInstance().setGridLayoutManager(recyclerView, noOfColumn, getContext());
     }
 
     protected void loadNetworkImage(String url, ImageView imageView) {
-        BaseHelper.loadNetworkImage(url, imageView, getContext());
+        BaseHelper.getInstance().loadNetworkImage(url, imageView, getContext());
     }
 
     protected void loadStorageImage(String url, ImageView imageView) {
-        BaseHelper.loadStorageImage(url, imageView, getContext());
+        BaseHelper.getInstance().loadStorageImage(url, imageView, getContext());
     }
 
     protected void loadNetworkProfile(String url, ImageView imageView) {
-        BaseHelper.loadNetworkProfile(url, imageView, getContext());
+        BaseHelper.getInstance().loadNetworkProfile(url, imageView, getContext());
     }
 
     protected void whatsAppIntent(String mobile) {
-        BaseHelper.whatsAppIntent(getContext(), mobile, "");
+        BaseHelper.getInstance().whatsAppIntent(getContext(), mobile, "");
     }
 
     protected void whatsAppIntent(String mobile, String text) {
-        BaseHelper.whatsAppIntent(getContext(), mobile, text);
+        BaseHelper.getInstance().whatsAppIntent(getContext(), mobile, text);
     }
 
     protected void shareContent(String content, String imageUrl) {
-        BaseHelper.shareContent(getContext(), content, imageUrl);
+        BaseHelper.getInstance().shareContent(getContext(), content, imageUrl);
     }
 
     protected void loadWebPage(String url) {
-        BaseHelper.loadWebPage(getContext(), url);
+        BaseHelper.getInstance().loadWebPage(getContext(), url);
     }
 
     protected void loadPdf(String url) {
-        BaseHelper.loadPdf(getContext(), url);
+        BaseHelper.getInstance().loadPdf(getContext(), url);
     }
 
     protected Calendar getLocalTime(String time) {
-        return BaseHelper.getLocalTime(time);
+        return BaseHelper.getInstance().getLocalTime(time);
     }
 
     protected String getTimeAgo(long time) {
-        return BaseHelper.getTimeAgo(time);
+        return BaseHelper.getInstance().getTimeAgo(time);
     }
 
 }

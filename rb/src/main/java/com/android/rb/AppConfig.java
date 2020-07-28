@@ -1,10 +1,5 @@
 package com.android.rb;
 
-import android.content.Context;
-
-import com.android.rb.helper.Preferences;
-import com.google.gson.Gson;
-
 public class AppConfig {
     private static AppConfig instance;
     private String APPLICATION_ID = "";
@@ -79,8 +74,8 @@ public class AppConfig {
         return instance;
     }
 
-    public <T> void setAuth(Context context, T cls) {
-        String s = new Gson().toJson(cls);
-        Preferences.setValue(context, Preferences.USER_DATA, s);
-    }
+//    public <T> void setAuth(Context context, T cls) {
+//        String s = new Gson().toJson(cls);
+//        Preferences.setValue(context, Preferences.USER_DATA, s);
+//    }
 }

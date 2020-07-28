@@ -41,7 +41,7 @@ public abstract class BasePagerAdapter extends PagerAdapter {
 
     //Calling
     protected void phoneCall(String number) {
-        BaseHelper.phoneCall(number, getContext());
+        BaseHelper.getInstance().phoneCall(number, getContext());
     }
 
     @Override
@@ -50,31 +50,36 @@ public abstract class BasePagerAdapter extends PagerAdapter {
     }
 
     protected File saveBitmap(Bitmap bitmap) {
-        return BaseHelper.saveBitmap(getContext(), bitmap);
+        return BaseHelper.getInstance().saveBitmap(getContext(), bitmap);
     }
 
     protected void navigateTo(Class<?> cls) {
-        BaseHelper.navigateTo(cls, getContext());
+        BaseHelper.getInstance().navigateTo(cls, getContext());
     }
 
     protected void navigateTo(Intent intent) {
-        BaseHelper.navigateTo(intent, getContext());
+        BaseHelper.getInstance().navigateTo(intent, getContext());
     }
 
     protected void navigateTo(Intent intent, int requestCode) {
-        BaseHelper.navigateTo(intent, requestCode, getContext());
+        BaseHelper.getInstance().navigateTo(intent, requestCode, getContext());
     }
 
     protected String getPrefValue(String key) {
-        return BaseHelper.getPrefValue(key, getContext());
+        return BaseHelper.getInstance().getPrefValue(key, getContext());
     }
 
     protected String getLangValue(String key) {
-        if (BaseHelper.getPrefValue(key, getContext()).equals("")) {
+        if (BaseHelper.getInstance().getPrefValue(key, getContext()).equals("")) {
             return "Empty value";
         } else {
-            return BaseHelper.getPrefValue(key, getContext());
+            return BaseHelper.getInstance().getPrefValue(key, getContext());
         }
+    }
+
+    protected  <T> void setAuth(Context context, T cls) {
+        String s = new Gson().toJson(cls);
+        Preferences.setValue(context, Preferences.USER_DATA, s);
     }
 
     protected <T> T getAuth(Class<T> type) {
@@ -88,15 +93,15 @@ public abstract class BasePagerAdapter extends PagerAdapter {
     }
 
     protected Drawable getMyDrawable(int drawable) {
-        return BaseHelper.getMyDrawable(drawable, getContext());
+        return BaseHelper.getInstance().getMyDrawable(drawable, getContext());
     }
 
     protected void loadNetworkImage(String url, ImageView imageView) {
-        BaseHelper.loadNetworkImage(url, imageView, getContext());
+        BaseHelper.getInstance().loadNetworkImage(url, imageView, getContext());
     }
 
     protected void loadStorageImage(String url, ImageView imageView) {
-        BaseHelper.loadStorageImage(url, imageView, getContext());
+        BaseHelper.getInstance().loadStorageImage(url, imageView, getContext());
     }
 
 }

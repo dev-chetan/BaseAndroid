@@ -3,9 +3,8 @@ package com.android.rb.base;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
-import android.media.ExifInterface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.Spanned;
 import android.widget.EditText;
@@ -17,21 +16,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.rb.R;
 import com.android.rb.comman.BaseHelper;
+import com.android.rb.helper.DialogCropHelper;
 import com.android.rb.helper.DialogHelper;
 import com.android.rb.helper.DialogStatus;
 import com.android.rb.helper.Preferences;
 import com.android.rb.interf.ImageReceiveListener;
+import com.android.rb.interf.RBImageCropListener;
+import com.android.rb.interf.RBImagePickerListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhihu.matisse.Matisse;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 
 public abstract class BaseActivity extends AppCompatActivity {
@@ -61,8 +58,13 @@ public abstract class BaseActivity extends AppCompatActivity {
                         , TypeToken.getParameterized(type, type).getType());
     }
 
+    protected <T> void setAuth(Context context, T cls) {
+        String s = new Gson().toJson(cls);
+        Preferences.setValue(context, Preferences.USER_DATA, s);
+    }
+
     protected File saveBitmap(Bitmap bitmap) {
-        return BaseHelper.saveBitmap(getContext(), bitmap);
+        return BaseHelper.getInstance().saveBitmap(getContext(), bitmap);
     }
 
     @Override
@@ -76,11 +78,11 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 
     protected String capWord(String word) {
-        return BaseHelper.capWord(word);
+        return BaseHelper.getInstance().capWord(word);
     }
 
     protected Spanned getHtmlContent(String str) {
-        return BaseHelper.getHtmlContent(str);
+        return BaseHelper.getInstance().getHtmlContent(str);
     }
 
     protected void showErrorMsg(String message) {
@@ -93,15 +95,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected Calendar getLocalTime(String time) {
-        return BaseHelper.getLocalTime(time);
+        return BaseHelper.getInstance().getLocalTime(time);
     }
 
     protected String getTimeAgo(long time) {
-        return BaseHelper.getTimeAgo(time);
+        return BaseHelper.getInstance().getTimeAgo(time);
     }
 
     protected void setListDataStatus(int size, String msg, TextView textView) {
-        BaseHelper.setListDataStatus(size, msg, textView);
+        BaseHelper.getInstance().setListDataStatus(size, msg, textView);
     }
 
     public Context getContext() {
@@ -119,158 +121,198 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected void show() {
-        BaseHelper.show(getContext());
+        BaseHelper.getInstance().show(getContext());
     }
 
     protected void hide() {
-        BaseHelper.hide();
+        BaseHelper.getInstance().hide();
     }
 
     protected Drawable getMyDrawable(int drawable) {
-        return BaseHelper.getMyDrawable(drawable, getContext());
+        return BaseHelper.getInstance().getMyDrawable(drawable, getContext());
     }
 
     protected void sendEmail(String email) {
-        BaseHelper.sendEmail(getContext(), email);
+        BaseHelper.getInstance().sendEmail(getContext(), email);
     }
 
     protected int getMyColor(int color) {
-        return BaseHelper.getMyColor(color, getContext());
+        return BaseHelper.getInstance().getMyColor(color, getContext());
     }
 
     protected void setSelection(EditText editText) {
-        BaseHelper.setSelection(editText);
+        BaseHelper.getInstance().setSelection(editText);
     }
 
     public void toast(String msg) {
-        BaseHelper.toast(msg, getContext());
+        BaseHelper.getInstance().toast(msg, getContext());
     }
 
     protected void loadStorageImage(String url, ImageView imageView) {
-        BaseHelper.loadStorageImage(url, imageView, getContext());
+        BaseHelper.getInstance().loadStorageImage(url, imageView, getContext());
     }
 
     protected void loadNetworkImage(String url, ImageView imageView) {
-        BaseHelper.loadNetworkImage(url, imageView, getContext());
+        BaseHelper.getInstance().loadNetworkImage(url, imageView, getContext());
     }
 
     protected void loadNetworkProfile(String url, ImageView imageView) {
-        BaseHelper.loadNetworkProfile(url, imageView, getContext());
+        BaseHelper.getInstance().loadNetworkProfile(url, imageView, getContext());
     }
 
     protected void loadWebPage(String url) {
-        BaseHelper.loadWebPage(getContext(), url);
+        BaseHelper.getInstance().loadWebPage(getContext(), url);
     }
 
     protected void loadPdf(String url) {
-        BaseHelper.loadPdf(getContext(), url);
+        BaseHelper.getInstance().loadPdf(getContext(), url);
     }
 
     //Validate email
     protected boolean isEmail(String email) {
-        return BaseHelper.isEmail(email);
+        return BaseHelper.getInstance().isEmail(email);
     }
 
     protected int getPixel(int id) {
-        return BaseHelper.getPixel(id, getContext());
+        return BaseHelper.getInstance().getPixel(id, getContext());
     }
 
     protected LinearLayoutManager setLinearLayoutManager(RecyclerView recyclerView) {
-        return BaseHelper.setLinearLayoutManager(recyclerView, getContext());
+        return BaseHelper.getInstance().setLinearLayoutManager(recyclerView, getContext());
     }
 
     protected LinearLayoutManager setLinearLayoutManagerHorizontal(RecyclerView recyclerView) {
-        return BaseHelper.setLinearLayoutManagerHorizontal(recyclerView, getContext());
+        return BaseHelper.getInstance().setLinearLayoutManagerHorizontal(recyclerView, getContext());
     }
 
     protected LinearLayoutManager setGridLayoutManager(RecyclerView recyclerView, int noOfColumn) {
-        return BaseHelper.setGridLayoutManager(recyclerView, noOfColumn, getContext());
+        return BaseHelper.getInstance().setGridLayoutManager(recyclerView, noOfColumn, getContext());
     }
 
     public void navigateTo(Class<?> cls) {
-        BaseHelper.navigateTo(cls, getContext());
+        BaseHelper.getInstance().navigateTo(cls, getContext());
     }
 
     public void navigateTo(Intent intent, int requestCode) {
-        BaseHelper.navigateTo(intent, requestCode, getContext());
+        BaseHelper.getInstance().navigateTo(intent, requestCode, getContext());
     }
 
     public void navigateTo(Intent intent) {
-        BaseHelper.navigateTo(intent, getContext());
+        BaseHelper.getInstance().navigateTo(intent, getContext());
     }
 
     //Navigate any activity
     public void navigateTo(Class<?> cls, int requestCode) {
-        BaseHelper.navigateTo(cls, requestCode, getContext());
+        BaseHelper.getInstance().navigateTo(cls, requestCode, getContext());
     }
 
     //Pref
     protected void setPrefValue(String key, String value) {
-        BaseHelper.setPrefValue(key, value, getContext());
+        BaseHelper.getInstance().setPrefValue(key, value, getContext());
     }
 
     protected void setPrefBool(String key, boolean value) {
-        BaseHelper.setPrefBool(key, value, getContext());
+        BaseHelper.getInstance().setPrefBool(key, value, getContext());
     }
 
     protected String getPrefValue(String key) {
-        return BaseHelper.getPrefValue(key, getContext());
+        return BaseHelper.getInstance().getPrefValue(key, getContext());
     }
 
     protected void showInfoDialog(String msg) {
-        BaseHelper.showInfoDialog(getContext(), msg);
+        BaseHelper.getInstance().showInfoDialog(getContext(), msg);
     }
 
 
     public boolean getPrefBool(String key) {
-        return BaseHelper.getPrefBool(key, getContext());
+        return BaseHelper.getInstance().getPrefBool(key, getContext());
     }
 
     protected String getLangValue(String key) {
-        if (BaseHelper.getPrefValue(key, getContext()).equals("")) {
+        if (BaseHelper.getInstance().getPrefValue(key, getContext()).equals("")) {
             return "Empty value";
         } else {
-            return BaseHelper.getPrefValue(key, getContext());
+            return BaseHelper.getInstance().getPrefValue(key, getContext());
         }
     }
 
     //get intent boolean
     public boolean getBooleanExtra(String key) {
-        return BaseHelper.getBooleanExtra(key, getContext());
+        return BaseHelper.getInstance().getBooleanExtra(key, getContext());
     }
 
     //get intent string
     public String getStringExtra(String key) {
-        return BaseHelper.getStringExtra(key, getContext());
+        return BaseHelper.getInstance().getStringExtra(key, getContext());
     }
 
     //get intent int
     public int getIntExtra(String key) {
-        return BaseHelper.getIntExtra(key, getContext());
+        return BaseHelper.getInstance().getIntExtra(key, getContext());
     }
 
     //Hide keyboard
     protected void dismissKeyboard(EditText editText) {
-        BaseHelper.dismissKeyboard(editText, getContext());
+        BaseHelper.getInstance().dismissKeyboard(editText, getContext());
     }
 
     void whatsAppIntent(String mobile) {
-        BaseHelper.whatsAppIntent(getContext(), mobile, "");
+        BaseHelper.getInstance().whatsAppIntent(getContext(), mobile, "");
     }
 
     //Show keyboard
     public void showKeyboard() {
-        BaseHelper.showKeyboard(getContext());
+        BaseHelper.getInstance().showKeyboard(getContext());
     }
 
     //Calling
     protected void phoneCall(String number) {
-        BaseHelper.phoneCall(number, getContext());
+        BaseHelper.getInstance().phoneCall(number, getContext());
     }
+
+    protected void rbImagePicker(final RBImagePickerListener listener, final boolean isCrop) {
+        BaseHelper.getInstance().rbImagePicker(new RBImagePickerListener() {
+            @Override
+            public void onRBPickerResult(String imagePath) {
+                if (isCrop) {
+                    crop(imagePath);
+                } else {
+                    listener.onRBPickerResult(imagePath);
+                }
+            }
+
+            private void crop(String imagePath) {
+                rbCropImage(imagePath, new RBImageCropListener() {
+                    @Override
+                    public void onRBCropResult(String imagePath) {
+                        listener.onRBPickerResult(imagePath);
+                    }
+                });
+            }
+        }, getContext());
+    }
+
+    private void rbCropImage(String imagePath, final RBImageCropListener listener) {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+        Bitmap bitmap = BitmapFactory.decodeFile(new File(imagePath).getAbsolutePath(), options);
+        BitmapFactory.decodeFile(new File(imagePath).getAbsolutePath(), options);
+        show();
+        new DialogCropHelper(getContext(), bitmap, new DialogCropHelper.OnResultReceived() {
+            @Override
+            public void onResult(String cropImagePath) {
+                hide();
+                if (!cropImagePath.equals("")) {
+                    listener.onRBCropResult(cropImagePath);
+                }
+            }
+        }, false);
+    }
+
 
     //Network call helper
     protected boolean isConnected() {
-        return BaseHelper.isConnected(getContext());
+        return BaseHelper.getInstance().isConnected(getContext());
     }
 
 //    public ApiInterface getApiInterface() {
@@ -293,89 +335,12 @@ public abstract class BaseActivity extends AppCompatActivity {
 //        return BaseHelper.getBasicAuth(getContext());
 //    }
 
-    protected void selectImage(AppCompatActivity activity, ImageReceiveListener listener, boolean isCrop) {
-        this.listener = listener;
-        cameraFile = BaseHelper.getFilePath(getContext());
-        BaseHelper.selectImage(activity, cameraFile, isCrop, getContext());
-    }
-
     protected String compressImage(String imagePath) {
-        return BaseHelper.compressImage(getContext(), imagePath);
+        return BaseHelper.getInstance().compressImage(getContext(), imagePath);
     }
 //
 //    protected RequestBody getRequestBody(String value) {
 //        return BaseHelper.getRequestBody(value);
 //    }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode != RESULT_OK)
-            return;
-        ArrayList<String> images = new ArrayList<>();
-        ExifInterface exif = null;
-        switch (requestCode) {
-            case REQUEST_IMAGE:
-                assert data != null;
-                if (Matisse.obtainResult(data) != null) {
-                    List<Uri> uriList = Matisse.obtainResult(data);
-                    if (uriList.size() > 1) {
-                        for (int i = 0; i < (uriList.size() > 5 ? 5 : uriList.size()); i++) {
-                            String imageUrl = Matisse.obtainPathResult(data).get(i);
-                            images.add(imageUrl);
-                        }
-                        listener.onImageReceived(images);
-                        if (uriList.size() > 5) {
-                            toast(getContext().getString(R.string.txt_image_limit));
-                        }
-                    } else {
-                        String imageUrl = Matisse.obtainPathResult(data).get(0);
-                        images.add(imageUrl);
-                        listener.onImageReceived(images);
-                    }
-                }
-                break;
-            case REQUEST_CAMERA:
-                try {
-                    exif = new ExifInterface(cameraFile.getAbsolutePath());
-                    int rotation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
-                    int rotationInDegrees = BaseHelper.exifToDegrees(rotation);
-                    images.add(cameraFile.getAbsolutePath());
-                    listener.onImageReceived(images);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                break;
-            case REQUEST_CAMERA_IMAGE_CROP:
-                try {
-                    exif = new ExifInterface(cameraFile.getAbsolutePath());
-                    int rotation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
-                    int rotationInDegrees = BaseHelper.exifToDegrees(rotation);
-                    BaseHelper.cropImage(cameraFile.getAbsolutePath(), rotationInDegrees, getContext(), new ImageReceiveListener() {
-                        @Override
-                        public void onImageReceived(ArrayList<String> images) {
-                            listener.onImageReceived(images);
-                        }
-                    });
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                break;
-            case REQUEST_IMAGE_CROP:
-                try {
-                    exif = new ExifInterface(Matisse.obtainPathResult(data).get(0));
-                    int rotation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
-                    int rotationInDegrees = BaseHelper.exifToDegrees(rotation);
-                    BaseHelper.cropImage(Matisse.obtainPathResult(data).get(0), rotationInDegrees, getContext(), new ImageReceiveListener() {
-                        @Override
-                        public void onImageReceived(ArrayList<String> images) {
-                            listener.onImageReceived(images);
-                        }
-                    });
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                break;
-        }
-    }
 }

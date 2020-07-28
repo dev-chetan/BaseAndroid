@@ -6,17 +6,60 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6459d845-2b24-4d18-a3c0-4ea0ef549ca2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_ktx_1_3_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_exifinterface_exifinterface_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_annotations_4_11_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_disklrucache_4_11_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_11_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__gun0912_ted_tedimagepicker_1_1_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_71_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_71_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/comman/FileUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/interf/RBImageCropListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/interf/RBImagePickerListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_9_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_9_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_9_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_9_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_3_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_annotations_4_9_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_disklrucache_4_9_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_9_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_11_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_9_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_zhihu_android_matisse_0_5_3_beta3_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/mylibrary/rb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/mylibrary/rb.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/base/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/base/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/rb/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BaseActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BaseAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BaseAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BaseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BaseFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BasePagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/base/BasePagerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/comman/BaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/comman/BaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helper/DialogCropHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helper/DialogCropHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +107,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3a_API_29" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-07T12:42:31.609Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-28T08:33:15.993Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
@@ -249,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594460141271</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Some Changes">
+      <created>1595661506699</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1595661506699</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -290,46 +340,50 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="339" y="265" key="AndroidCreateResourceFileDialog/0.23.1920.983@0.23.1920.983" timestamp="1594357203241" />
-    <state x="578" y="358" key="AndroidCreateXmlResourceDialog" timestamp="1594014414536">
+    <state x="578" y="358" key="AndroidCreateXmlResourceDialog" timestamp="1595919605599">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="578" y="358" key="AndroidCreateXmlResourceDialog/0.23.1920.983@0.23.1920.983" timestamp="1594014414536" />
-    <state x="366" y="106" key="CommitChangelistDialog2" timestamp="1594460140800">
+    <state x="578" y="358" key="AndroidCreateXmlResourceDialog/0.23.1920.983@0.23.1920.983" timestamp="1595919605599" />
+    <state x="102" y="83" key="CommitChangelistDialog2" timestamp="1595925460156">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="366" y="106" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1594460140800" />
-    <state width="1395" height="393" key="GridCell.Tab.0.bottom" timestamp="1594372094541">
+    <state x="102" y="83" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1595925460156" />
+    <state width="1395" height="393" key="GridCell.Tab.0.bottom" timestamp="1595925396378">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state width="1395" height="393" key="GridCell.Tab.0.bottom/0.23.1920.983@0.23.1920.983" timestamp="1594372094541" />
-    <state width="1395" height="393" key="GridCell.Tab.0.center" timestamp="1594372094540">
+    <state width="1395" height="393" key="GridCell.Tab.0.bottom/0.23.1920.983@0.23.1920.983" timestamp="1595925396378" />
+    <state width="1395" height="393" key="GridCell.Tab.0.center" timestamp="1595925396377">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state width="1395" height="393" key="GridCell.Tab.0.center/0.23.1920.983@0.23.1920.983" timestamp="1594372094540" />
-    <state width="1395" height="393" key="GridCell.Tab.0.left" timestamp="1594372094540">
+    <state width="1395" height="393" key="GridCell.Tab.0.center/0.23.1920.983@0.23.1920.983" timestamp="1595925396377" />
+    <state width="1395" height="393" key="GridCell.Tab.0.left" timestamp="1595925396377">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state width="1395" height="393" key="GridCell.Tab.0.left/0.23.1920.983@0.23.1920.983" timestamp="1594372094540" />
-    <state width="1395" height="393" key="GridCell.Tab.0.right" timestamp="1594372094540">
+    <state width="1395" height="393" key="GridCell.Tab.0.left/0.23.1920.983@0.23.1920.983" timestamp="1595925396377" />
+    <state width="1395" height="393" key="GridCell.Tab.0.right" timestamp="1595925396378">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state width="1395" height="393" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1594372094540" />
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1594460142548">
+    <state width="1395" height="393" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1595925396378" />
+    <state x="429" y="226" key="MultipleFileMergeDialog" timestamp="1595661534926">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1594460142548" />
-    <state x="100" y="123" width="1237" height="761" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1594382667185">
+    <state x="429" y="226" key="MultipleFileMergeDialog/0.23.1920.983@0.23.1920.983" timestamp="1595661534926" />
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1595661517010">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="100" y="123" width="1237" height="761" key="com.android.tools.idea.avdmanager.AvdListDialog/0.23.1920.983@0.23.1920.983" timestamp="1594382667185" />
-    <state x="422" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1595390029533">
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1595661517010" />
+    <state x="100" y="123" width="1237" height="761" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1595920706750">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="422" y="336" key="com.intellij.ide.util.TipDialog/0.23.1920.983@0.23.1920.983" timestamp="1595390029533" />
-    <state x="404" y="260" width="695" height="486" key="find.popup" timestamp="1594010411158">
+    <state x="100" y="123" width="1237" height="761" key="com.android.tools.idea.avdmanager.AvdListDialog/0.23.1920.983@0.23.1920.983" timestamp="1595920706750" />
+    <state x="422" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1595822735101">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="404" y="260" width="695" height="486" key="find.popup/0.23.1920.983@0.23.1920.983" timestamp="1594010411158" />
+    <state x="422" y="336" key="com.intellij.ide.util.TipDialog/0.23.1920.983@0.23.1920.983" timestamp="1595822735101" />
+    <state x="404" y="260" width="852" height="550" key="find.popup" timestamp="1595921361073">
+      <screen x="0" y="23" width="1920" height="983" />
+    </state>
+    <state x="404" y="260" width="852" height="550" key="find.popup/0.23.1920.983@0.23.1920.983" timestamp="1595921361073" />
     <state x="269" y="253" key="psd.add.library.dependency.panel.dimension" timestamp="1593760365418">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
@@ -342,9 +396,9 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="454" y="117" key="refactoring.ChangeSignatureDialog/0.23.1920.983@0.23.1920.983" timestamp="1594361313973" />
-    <state x="383" y="234" width="670" height="158" key="search.everywhere.popup" timestamp="1594377916532">
+    <state x="383" y="234" width="670" height="158" key="search.everywhere.popup" timestamp="1595845621198">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="383" y="234" width="670" height="158" key="search.everywhere.popup/0.23.1920.983@0.23.1920.983" timestamp="1594377916532" />
+    <state x="383" y="234" width="670" height="158" key="search.everywhere.popup/0.23.1920.983@0.23.1920.983" timestamp="1595845621198" />
   </component>
 </project>

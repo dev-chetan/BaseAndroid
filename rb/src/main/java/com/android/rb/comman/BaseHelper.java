@@ -4,13 +4,11 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
-import android.media.ExifInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
@@ -32,9 +30,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.FileProvider;
 import androidx.core.content.res.ResourcesCompat;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -50,20 +46,15 @@ import com.android.rb.helper.PermissionHandler;
 import com.android.rb.helper.PermissionUtil;
 import com.android.rb.helper.Preferences;
 import com.android.rb.interf.ImageReceiveListener;
+import com.android.rb.interf.RBImagePickerListener;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.google.gson.GsonBuilder;
-import com.zhihu.matisse.Matisse;
-import com.zhihu.matisse.MimeType;
-import com.zhihu.matisse.engine.ImageEngine;
-import com.zhihu.matisse.internal.entity.CaptureStrategy;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -82,6 +73,10 @@ import java.util.Map;
 import java.util.Random;
 import java.util.TimeZone;
 
+import gun0912.tedimagepicker.builder.TedImagePicker;
+import gun0912.tedimagepicker.builder.listener.OnSelectedListener;
+
+
 public class BaseHelper {
 
     private static final String TAG = "BaseHelper";
@@ -91,9 +86,17 @@ public class BaseHelper {
     private static final int REQUEST_CAMERA_IMAGE_CROP = 1004;
 
     private static LoadingDialog loadingDialog;
+    private static BaseHelper instance;
 
 
-    public static File saveBitmap(Context context, Bitmap bitmap) {
+    public static BaseHelper getInstance() {
+        if (instance == null) {
+            instance = new BaseHelper();
+        }
+        return instance;
+    }
+
+    public File saveBitmap(Context context, Bitmap bitmap) {
         File file = getFilePath(context);
         try {
             OutputStream output = new FileOutputStream(file);
@@ -110,7 +113,7 @@ public class BaseHelper {
 
 
     //Cap word
-    public static String capWord(String word) {
+    public String capWord(String word) {
         try {
             if (!word.equals("")) {
                 return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
@@ -124,16 +127,16 @@ public class BaseHelper {
 
 
     // Dialogs
-    public static void show(Context context) {
+    public void show(Context context) {
         loadingDialog = new LoadingDialog(context, false);
     }
 
-    public static void hide() {
+    public void hide() {
         if (loadingDialog != null)
             loadingDialog.hide();
     }
 
-    public static void showInfoDialog(Context context, String msg) {
+    public void showInfoDialog(Context context, String msg) {
         new DialogHelper(msg, "", context.getString(R.string.txt_ok), new DialogHelper.DialogCallBack() {
             @Override
             public void onResult(int resultCode) {
@@ -143,7 +146,7 @@ public class BaseHelper {
     }
 
 
-    public static Spanned getHtmlContent(String s) {
+    public Spanned getHtmlContent(String s) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             return Html.fromHtml(s, Html.FROM_HTML_MODE_LEGACY);
         } else {
@@ -152,79 +155,79 @@ public class BaseHelper {
     }
 
     // Validate Methods
-    public static boolean isEmail(String email) {
+    public boolean isEmail(String email) {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
 
     //Resources methods
-    public static int getPixel(int id, Context context) {
+    public int getPixel(int id, Context context) {
         return (int) (context.getResources().getDimension(id) / context.getResources().getDisplayMetrics().density);
     }
 
-    public static int getMyColor(int color, Context context) {
+    public int getMyColor(int color, Context context) {
         return ResourcesCompat.getColor(context.getResources(), color, null);
     }
 
     //List layout manager
-    public static LinearLayoutManager setLinearLayoutManager(RecyclerView recyclerView, Context context) {
+    public LinearLayoutManager setLinearLayoutManager(RecyclerView recyclerView, Context context) {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(linearLayoutManager);
         return linearLayoutManager;
     }
 
-    public static LinearLayoutManager setLinearLayoutManagerHorizontal(RecyclerView recyclerView, Context context) {
+    public LinearLayoutManager setLinearLayoutManagerHorizontal(RecyclerView recyclerView, Context context) {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context
                 , LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
         return linearLayoutManager;
     }
 
-    public static GridLayoutManager setGridLayoutManager(RecyclerView recyclerView, int noOfColumn, Context context) {
+    public GridLayoutManager setGridLayoutManager(RecyclerView recyclerView, int noOfColumn, Context context) {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(context, noOfColumn);
         recyclerView.setLayoutManager(gridLayoutManager);
         return gridLayoutManager;
     }
 
-    public static Drawable getMyDrawable(int drawable, Context context) {
+    public Drawable getMyDrawable(int drawable, Context context) {
         return ResourcesCompat.getDrawable(context.getResources(), drawable, null);
     }
 
 
     //Other supported methods
-    public static void toast(String msg, Context context) {
+    public void toast(String msg, Context context) {
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
     }
 
 
     //Navigation methods
-    public static void navigateTo(Class<?> cls, Context context) {
+    public void navigateTo(Class<?> cls, Context context) {
         context.startActivity(new Intent(context, cls));
         showAnimWhileChangeScreen(context);
     }
 
-    public static void navigateTo(Intent intent, int requestCode, Context context) {
+    public void navigateTo(Intent intent, int requestCode, Context context) {
         ((AppCompatActivity) context).startActivityForResult(intent, requestCode);
         showAnimWhileChangeScreen(context);
     }
 
-    public static void navigateTo(Class<?> cls, int requestCode, Context context) {
+    public void navigateTo(Class<?> cls, int requestCode, Context context) {
         ((AppCompatActivity) context).startActivityForResult(new Intent(context, cls), requestCode);
         showAnimWhileChangeScreen(context);
     }
 
-    public static void navigateTo(Intent intent, Context context) {
+    public void navigateTo(Intent intent, Context context) {
         context.startActivity(intent);
         showAnimWhileChangeScreen(context);
     }
 
-    private static void showAnimWhileChangeScreen(Context context) {
+    private void showAnimWhileChangeScreen(Context context) {
         ((AppCompatActivity) context).overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
     }
 
 
     //Implicit intents
-    public static void whatsAppIntent(Context context, String mobile, String text) {
+    public void whatsAppIntent(Context context, String mobile, String text) {
         PackageManager packageManager = context.getPackageManager();
         Intent i = new Intent(Intent.ACTION_VIEW);
         try {
@@ -254,7 +257,7 @@ public class BaseHelper {
         }
     }
 
-    public static void loadWebPage(Context context, String url) {
+    public void loadWebPage(Context context, String url) {
         try {
             if (!url.equals("")) {
                 try {
@@ -289,7 +292,7 @@ public class BaseHelper {
         }
     }
 
-    public static String prettyCount(Number number) {
+    public String prettyCount(Number number) {
         char[] suffix = {' ', 'K', 'M', 'B', 'T', 'P', 'E'};
         long numValue = number.longValue();
         int value = (int) Math.floor(Math.log10(numValue));
@@ -301,14 +304,14 @@ public class BaseHelper {
         }
     }
 
-    public static void loadPdf(Context context, String url) {
+    public void loadPdf(Context context, String url) {
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setPackage("com.google.android.apps.docs");
         i.setData(Uri.parse(url));
         context.startActivity(i);
     }
 
-    public static void sendEmail(Context context, String email) {
+    public void sendEmail(Context context, String email) {
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                 "mailto", "" + email, null));
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "");
@@ -316,7 +319,7 @@ public class BaseHelper {
         context.startActivity(Intent.createChooser(emailIntent, ""));
     }
 
-    public static void shareContent(final Context context, final String content, String imageUrl) {
+    public void shareContent(final Context context, final String content, String imageUrl) {
         if (!imageUrl.equals("")) {
             Glide.with(context)
                     .asBitmap()
@@ -355,19 +358,19 @@ public class BaseHelper {
 
 
     //Preference methods
-    public static void setPrefValue(String key, String value, Context context) {
+    public void setPrefValue(String key, String value, Context context) {
         Preferences.setValue(context, key, value);
     }
 
-    public static void setPrefBool(String key, boolean value, Context context) {
+    public void setPrefBool(String key, boolean value, Context context) {
         Preferences.setValue(context, key, value);
     }
 
-    public static String getPrefValue(String key, Context context) {
+    public String getPrefValue(String key, Context context) {
         return Preferences.getValueString(context, key);
     }
 
-    public static void phoneCall(final String number, final Context context) {
+    public void phoneCall(final String number, final Context context) {
         String[] perms = {Manifest.permission.CALL_PHONE};
         PermissionUtil.permission(((AppCompatActivity) context), perms, new PermissionHandler() {
             @Override
@@ -383,15 +386,15 @@ public class BaseHelper {
         });
     }
 
-    public static boolean getPrefBool(String key, Context context) {
+    public boolean getPrefBool(String key, Context context) {
         return Preferences.getValueBoolean(context, key, false);
     }
 
-    public static boolean getBooleanExtra(String key, Context context) {
+    public boolean getBooleanExtra(String key, Context context) {
         return ((Activity) context).getIntent().getBooleanExtra(key, false);
     }
 
-    public static String getStringExtra(String key, Context context) {
+    public String getStringExtra(String key, Context context) {
         if (((Activity) context).getIntent().getStringExtra(key) != null) {
             return ((Activity) context).getIntent().getStringExtra(key);
         } else {
@@ -399,13 +402,13 @@ public class BaseHelper {
         }
     }
 
-    public static int getIntExtra(String key, Context context) {
+    public int getIntExtra(String key, Context context) {
         return ((Activity) context).getIntent().getIntExtra(key, 0);
     }
 
 
     //Network helper
-    public static boolean isConnected(Context context) {
+    public boolean isConnected(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager)
                 context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager != null) {
@@ -469,7 +472,7 @@ public class BaseHelper {
 //        return "";
 //    }
 
-    public static void printParams(Map<?, ?> map) {
+    public void printParams(Map<?, ?> map) {
         Log.e(TAG, "Params Map : " + map.toString());
         Log.e(TAG, "Params : " +
                 new GsonBuilder().setPrettyPrinting().create().toJson(map));
@@ -500,31 +503,31 @@ public class BaseHelper {
 
 
     //Keyboard handler
-    public static void dismissKeyboard(EditText editText, Context context) {
+    public void dismissKeyboard(EditText editText, Context context) {
         InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
     }
 
-    public static void showKeyboard(Context context) {
+    public void showKeyboard(Context context) {
         InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
     }
 
 
     // Image loader
-    public static void loadStorageImage(final String url, final ImageView imageView, Context context) {
+    public void loadStorageImage(final String url, final ImageView imageView, Context context) {
         startLoading(url, imageView, false, false, context);
     }
 
-    public static void loadNetworkImage(final String url, final ImageView imageView, Context context) {
+    public void loadNetworkImage(final String url, final ImageView imageView, Context context) {
         startLoading(url, imageView, false, true, context);
     }
 
-    public static void loadNetworkProfile(final String url, final ImageView imageView, Context context) {
+    public void loadNetworkProfile(final String url, final ImageView imageView, Context context) {
         startLoading(url, imageView, true, true, context);
     }
 
-    private static void startLoading(final String url, final ImageView imageView, final boolean isProfile, boolean isNetwork, final Context context) {
+    private void startLoading(final String url, final ImageView imageView, final boolean isProfile, boolean isNetwork, final Context context) {
         try {
             if (!url.equals("")) {
                 Glide.with(context)
@@ -553,7 +556,7 @@ public class BaseHelper {
         }
     }
 
-    private static void imageError(final ImageView imageView, boolean isProfile, Context context) {
+    private void imageError(final ImageView imageView, boolean isProfile, Context context) {
         imageView.setImageDrawable(isProfile
                 ? getMyDrawable(AppConfig.getInstance().getProfilePlaceholder(), context)
                 : getMyDrawable(AppConfig.getInstance().getNoImagePlaceholder(), context));
@@ -561,7 +564,7 @@ public class BaseHelper {
 
 
     //Calendar & time
-    public static Calendar getLocalTime(String time) {
+    public Calendar getLocalTime(String time) {
         try {
             Calendar calendar = Calendar.getInstance();
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
@@ -577,7 +580,7 @@ public class BaseHelper {
         return null;
     }
 
-    public static String getTimeAgo(long time) {
+    public String getTimeAgo(long time) {
         int SECOND_MILLIS = 1000;
         int MINUTE_MILLIS = 60 * SECOND_MILLIS;
         int HOUR_MILLIS = 60 * MINUTE_MILLIS;
@@ -618,32 +621,27 @@ public class BaseHelper {
 
 
     //Image processing
-    public static void selectImage(final AppCompatActivity activity, final File cameraFile, final boolean isCrop, final Context context) {
-        String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE
-                , Manifest.permission.WRITE_EXTERNAL_STORAGE
-                , Manifest.permission.CAMERA};
-        PermissionUtil.permission(activity, perms, new PermissionHandler() {
-            @Override
-            public void onGranted() {
-                openGallery(activity, false, isCrop, context);
-            }
-
-            @Override
-            public void onDenied() {
-                toast(context.getString(R.string.txt_permission_deny), context);
-            }
-        });
-    }
-
-    //Image processing
-    public static void selectImage(final Fragment fragment, final File cameraFile, final boolean isCrop, final Context context) {
+    public void rbImagePicker(final RBImagePickerListener rbImagePickerListener, final Context context) {
         String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE
                 , Manifest.permission.WRITE_EXTERNAL_STORAGE
                 , Manifest.permission.CAMERA};
         PermissionUtil.permission(((AppCompatActivity) context), perms, new PermissionHandler() {
             @Override
             public void onGranted() {
-                openGallery(fragment, false, isCrop, context);
+                openRbPicker(context);
+            }
+
+            private void openRbPicker(final Context context) {
+                TedImagePicker.with(context)
+                        .image()
+                        .mediaType(gun0912.tedimagepicker.builder.type.MediaType.IMAGE)
+                        .start(new OnSelectedListener() {
+                            @Override
+                            public void onSelected(Uri uri) {
+                                Log.e(TAG, "Image received..." + FileUtils.getPath(context, uri));
+                                rbImagePickerListener.onRBPickerResult(FileUtils.getPath(context, uri));
+                            }
+                        });
             }
 
             @Override
@@ -653,74 +651,7 @@ public class BaseHelper {
         });
     }
 
-
-    private static void openCamera(File cameraFile, boolean isFront, boolean isCrop, Context context) {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (intent.resolveActivity(context.getPackageManager()) != null) {
-
-            Uri photoURI;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                photoURI = FileProvider.getUriForFile(context,
-                        AppConfig.getInstance().getApplicationId() + ".provider",
-                        cameraFile);
-            } else {
-                photoURI = Uri.fromFile(cameraFile);
-            }
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-            intent.putExtra("return-data", true);
-            if (isFront) {
-                intent.putExtra("android.intent.extras.CAMERA_FACING", 1);
-            }
-            ((AppCompatActivity) context).startActivityForResult(intent, isCrop ? REQUEST_CAMERA_IMAGE_CROP : REQUEST_CAMERA);
-        }
-    }
-
-    private static void openGallery(AppCompatActivity activity, boolean isMultiple, boolean isCrop, Context context) {
-        Matisse.from(activity)
-                .choose(MimeType.of(MimeType.JPEG, MimeType.PNG))
-                .countable(false)
-                .maxSelectable(isMultiple ? 5 : 1)
-                .showSingleMediaType(true)
-                .gridExpectedSize(context.getResources().getDimensionPixelSize(R.dimen._100sdp))
-                .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
-                .thumbnailScale(0.85f)
-                .imageEngine(new MyGlideEngine())
-                .theme(R.style.Matisse_Zhihu)
-                .capture(true)
-                .captureStrategy(new CaptureStrategy(true, context.getPackageName() + ".provider"))
-                .forResult(isCrop ? REQUEST_IMAGE_CROP : REQUEST_IMAGE);
-    }
-
-
-    private static void openGallery(Fragment fragment, boolean isMultiple, boolean isCrop, Context context) {
-        Matisse.from(fragment)
-                .choose(MimeType.of(MimeType.JPEG, MimeType.PNG))
-                .countable(false)
-                .maxSelectable(isMultiple ? 5 : 1)
-                .showSingleMediaType(true)
-                .gridExpectedSize(context.getResources().getDimensionPixelSize(R.dimen._100sdp))
-                .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
-                .thumbnailScale(0.85f)
-                .imageEngine(new MyGlideEngine())
-                .theme(R.style.Matisse_Zhihu)
-                .capture(true)
-                .captureStrategy(new CaptureStrategy(true, context.getPackageName() + ".provider"))
-                .forResult(isCrop ? REQUEST_IMAGE_CROP : REQUEST_IMAGE);
-    }
-
-
-    public static int exifToDegrees(int exifOrientation) {
-        if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) {
-            return 90;
-        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {
-            return 180;
-        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {
-            return 270;
-        }
-        return 0;
-    }
-
-    public static void cropImage(String path, int rotation, Context context, final ImageReceiveListener listener) {
+    public void cropImage(String path, int rotation, Context context, final ImageReceiveListener listener) {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inPreferredConfig = Bitmap.Config.ARGB_8888;
         Bitmap bitmap = BitmapFactory.decodeFile(new File(path).getAbsolutePath(), options);
@@ -743,14 +674,14 @@ public class BaseHelper {
         }, false);
     }
 
-    private static Bitmap rotateImage(Bitmap source, float rotation) {
+    private Bitmap rotateImage(Bitmap source, float rotation) {
         Matrix matrix = new Matrix();
         matrix.postRotate(rotation);
         return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(),
                 matrix, true);
     }
 
-    public static void setSelection(EditText editText) {
+    public void setSelection(EditText editText) {
         try {
             if (!editText.getText().toString().equals("")) {
                 editText.setSelection(editText.getText().toString().length());
@@ -762,7 +693,7 @@ public class BaseHelper {
         }
     }
 
-    public static void setListDataStatus(int size, String msg, TextView textView) {
+    public void setListDataStatus(int size, String msg, TextView textView) {
         textView.setText(msg);
         if (size > 0) {
             textView.setVisibility(View.GONE);
@@ -771,67 +702,14 @@ public class BaseHelper {
         }
     }
 
-    static class MyGlideEngine implements ImageEngine {
-
-        @Override
-        public void loadThumbnail(Context context, int resize, Drawable placeholder, ImageView imageView, Uri uri) {
-            RequestOptions requestOptions = new RequestOptions()
-                    .override(resize, resize)
-                    .centerCrop()
-                    .placeholder(placeholder);
-            Glide.with(context)
-                    .asBitmap()
-                    .load(uri)
-                    .apply(requestOptions)
-                    .into(imageView);
-        }
-
-        @Override
-        public void loadGifThumbnail(Context context, int resize, Drawable placeholder, ImageView imageView, Uri uri) {
-            RequestOptions requestOptions = new RequestOptions()
-                    .override(resize, resize)
-                    .centerCrop()
-                    .placeholder(placeholder);
-            Glide.with(context)
-                    .asBitmap()
-                    .load(uri)
-                    .apply(requestOptions)
-                    .into(imageView);
-        }
-
-        @Override
-        public void loadImage(Context context, int resizeX, int resizeY, ImageView imageView, Uri uri) {
-            RequestOptions requestOptions = new RequestOptions()
-                    .override(resizeX, resizeY)
-                    .priority(Priority.HIGH)
-                    .centerCrop();
-            Glide.with(context)
-                    .load(uri)
-                    .apply(requestOptions)
-                    .into(imageView);
-        }
-
-        @Override
-        public void loadGifImage(Context context, int resizeX, int resizeY, ImageView imageView, Uri uri) {
-
-        }
-
-
-        @Override
-        public boolean supportAnimatedGif() {
-            return true;
-        }
-
-    }
-
-    private static Uri getImageUri(Context context, Bitmap bitmap) {
+    private Uri getImageUri(Context context, Bitmap bitmap) {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
         String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), bitmap, "Title", null);
         return Uri.parse(path);
     }
 
-    public static String compressImage(Context context, String path) {
+    public String compressImage(Context context, String path) {
         return ImageCompress.compressImage(
                 context,
                 1516.0f,
@@ -841,7 +719,7 @@ public class BaseHelper {
     }
 
     //Path generator
-    public static File getFilePath(Context context) {
+    public File getFilePath(Context context) {
         String state = Environment.getExternalStorageState();
         File file;
         if (Environment.MEDIA_MOUNTED.equals(state)) {
@@ -854,13 +732,13 @@ public class BaseHelper {
         return new File(file, getRandomImageName(context));
     }
 
-    public static String getRandomImageName(Context context) {
+    public String getRandomImageName(Context context) {
         Random r = new Random();
         int i1 = r.nextInt(1000 - 1) + 65;
         return context.getString(R.string.app_name).replace(" ", "_") + "_" + i1 + ".png";
     }
 
-    public static File getCompressFilePath(Context context) {
+    public File getCompressFilePath(Context context) {
         String state = Environment.getExternalStorageState();
         File file;
         if (Environment.MEDIA_MOUNTED.equals(state)) {

@@ -7,21 +7,17 @@ import android.content.Context;
 import android.content.res.Resources.NotFoundException;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
-import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 
 import androidx.databinding.DataBindingUtil;
 
-import com.android.rb.AppConfig;
 import com.android.rb.R;
+import com.android.rb.comman.BaseHelper;
 import com.android.rb.databinding.DialogCropLayoutBinding;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
-import java.util.Random;
 
 
 public class DialogCropHelper extends Dialog {
@@ -66,65 +62,21 @@ public class DialogCropHelper extends Dialog {
                         super.onPreExecute();
                     }
 
-                    @SuppressLint("WrongThread")
                     @Override
-                    protected String doInBackground(Void... params) {
-
+                    protected String doInBackground(Void... voids) {
                         bitmap[0] = binding.CropImageView.getCroppedImage();
-
-                        String path = "";
-                        try {
-                            // TODO Auto-generated method stub
-                            OutputStream output;
-                            try {
-
-                                String filePath = "";
-                                String state = Environment.getExternalStorageState();
-                                if (Environment.MEDIA_MOUNTED.equals(state)) {
-                                    filePath = new File(Environment.getExternalStorageDirectory(), AppConfig.getInstance().getAPP_NAME()).getAbsolutePath();
-                                } else {
-                                    filePath = new File(context.getFilesDir(), AppConfig.getInstance().getAPP_NAME()).getAbsolutePath();
-                                }
-
-                                File dir = new File(filePath);
-                                dir.mkdirs();
-
-                                Random r = new Random();
-                                int i1 = r.nextInt(1000 - 1) + 65;
-
-                                File file = new File(dir, AppConfig.getInstance().getAPP_NAME().replace(" ", "_") + "_" + i1 + ".png");
-                                if (file.exists()) {
-                                    file.delete();
-                                    file.createNewFile();
-                                } else {
-                                    file.createNewFile();
-                                }
-
-                                output = new FileOutputStream(file);
-                                bitmap[0].compress(Bitmap.CompressFormat.PNG, 100, output);
-                                output.flush();
-                                output.close();
-                                path = file.getAbsolutePath();
-                            } catch (Exception e) {
-                                // TODO Auto-generated catch block
-                                e.printStackTrace();
-                            }
-                        } catch (Exception e) {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
-                        }
-
-                        return path;
+                        File file = BaseHelper.getInstance().saveBitmap(context, bitmap[0]);
+                        return file.getAbsolutePath();
                     }
 
                     @Override
-                    protected void onPostExecute(final String aVoid) {
-                        super.onPostExecute(aVoid);
+                    protected void onPostExecute(final String s) {
+                        super.onPostExecute(s);
                         ((Activity) context).runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 hide();
-                                onResultReceived.onResult(aVoid);
+                                onResultReceived.onResult(s);
                             }
                         });
                     }
