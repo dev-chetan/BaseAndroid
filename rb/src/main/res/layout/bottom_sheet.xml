@@ -3,71 +3,89 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <RelativeLayout
-        android:id="@+id/rlMain"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <RelativeLayout
-            android:id="@+id/relTitle"
+            android:id="@+id/rlMain"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_38sdp">
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relTitle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_38sdp">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="Select Country"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_13sdp"
+                    tools:ignore="HardcodedText" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlDivider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_below="@+id/relTitle"
+                android:background="#50aaaaaa" />
 
             <TextView
-                android:id="@+id/tvTitle"
+                android:id="@+id/tvSave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="@dimen/_8sdp"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:includeFontPadding="false"
-                android:text="Select Country"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/_13sdp"
-                tools:ignore="HardcodedText" />
+                android:layout_below="@+id/rlDivider"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@drawable/drawable_line_btn"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="Save"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/rlSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvSave"
+                android:visibility="gone">
+
+                <include
+                    android:id="@+id/search"
+                    layout="@layout/layout_search" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlSearch"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbars="none"
+                app:reverseLayout="true"
+                tools:ignore="RtlSymmetry" />
 
         </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rlDivider"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_1sdp"
-            android:layout_below="@+id/relTitle"
-            android:background="#50aaaaaa" />
-
-        <TextView
-            android:id="@+id/tvSave"
-            android:visibility="gone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rlDivider"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginEnd="@dimen/_14sdp"
-            android:layout_marginBottom="@dimen/_8sdp"
-            android:background="@drawable/drawable_line_btn"
-            android:paddingStart="@dimen/_16sdp"
-            android:paddingTop="@dimen/_8sdp"
-            android:paddingEnd="@dimen/_16sdp"
-            android:paddingBottom="@dimen/_8sdp"
-            android:text="Save" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvSave"
-            android:clipToPadding="false"
-            android:nestedScrollingEnabled="false"
-            android:paddingStart="@dimen/_8sdp"
-            android:paddingTop="@dimen/_8sdp"
-            android:paddingEnd="@dimen/_8sdp"
-            android:paddingBottom="@dimen/_8sdp"
-            android:scrollbarStyle="outsideOverlay"
-            android:scrollbars="none"
-            app:reverseLayout="true"
-            tools:ignore="RtlSymmetry" />
-
-    </RelativeLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

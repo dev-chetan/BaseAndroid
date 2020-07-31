@@ -16,6 +16,9 @@ public class BottomSheetData {
         this.title = title;
     }
 
+    public BottomSheetData() {
+    }
+
     public int getId() {
         return id;
     }

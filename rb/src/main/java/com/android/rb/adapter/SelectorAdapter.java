@@ -4,6 +4,7 @@ package com.android.rb.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,20 +16,25 @@ import com.android.rb.helper.BottomSheetHelper;
 import com.android.rb.models.BottomSheetData;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SelectorAdapter extends BaseAdapter<SelectorAdapter.ViewHolder> {
 
+    private static final String TAG = "SelectorAdapter";
     public List<BottomSheetData> arrayList;
+    public List<BottomSheetData> arrayListFilter;
     private BottomSheetDialog bottomSheetDialog;
     BottomSheetHelper.OnBottomSheetResult onBottomSheetResult;
-    private boolean isMultiple;
+    BottomSheetHelper.Type type;
 
-    public SelectorAdapter(List<BottomSheetData> arrayList, BottomSheetDialog bottomSheetDialog, BottomSheetHelper.OnBottomSheetResult onBottomSheetResult, boolean isMultiple) {
+    public SelectorAdapter(List<BottomSheetData> arrayList, BottomSheetDialog bottomSheetDialog, BottomSheetHelper.OnBottomSheetResult onBottomSheetResult, BottomSheetHelper.Type type) {
         this.arrayList = arrayList;
+        arrayListFilter = new ArrayList<>();
+        arrayListFilter.addAll(this.arrayList);
         this.bottomSheetDialog = bottomSheetDialog;
         this.onBottomSheetResult = onBottomSheetResult;
-        this.isMultiple = isMultiple;
+        this.type = type;
     }
 
     @Override
@@ -53,13 +59,12 @@ public class SelectorAdapter extends BaseAdapter<SelectorAdapter.ViewHolder> {
         holder.binding.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!isMultiple) {
+                if (type == BottomSheetHelper.Type.singleSelection || type == BottomSheetHelper.Type.singleSearch) {
                     for (int i = 0; i < arrayList.size(); i++) {
                         arrayList.get(i).setSelect(false);
                     }
                     arrayList.get(position).setSelect(true);
-                    notifyDataSetChanged();
-                    onBottomSheetResult.onResult(arrayList);
+//                    onBottomSheetResult.onResult(getList(arrayList));
                     bottomSheetDialog.dismiss();
                 } else {
                     if (arrayList.get(position).isSelect()) {
@@ -74,13 +79,12 @@ public class SelectorAdapter extends BaseAdapter<SelectorAdapter.ViewHolder> {
         holder.binding.imgSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!isMultiple) {
+                if (type == BottomSheetHelper.Type.singleSelection || type == BottomSheetHelper.Type.singleSearch) {
                     for (int i = 0; i < arrayList.size(); i++) {
                         arrayList.get(i).setSelect(false);
                     }
                     arrayList.get(position).setSelect(true);
-                    notifyDataSetChanged();
-                    onBottomSheetResult.onResult(arrayList);
+//                    onBottomSheetResult.onResult(getList(arrayList));
                     bottomSheetDialog.dismiss();
                 } else {
                     if (arrayList.get(position).isSelect()) {
@@ -94,17 +98,63 @@ public class SelectorAdapter extends BaseAdapter<SelectorAdapter.ViewHolder> {
         });
     }
 
+    public List<BottomSheetData> getList(List<BottomSheetData> arrayList) {
+        for (int i = 0; i < arrayListFilter.size(); i++) {
+            if (isSelected(arrayListFilter.get(i).getTitle(), arrayList)) {
+                arrayListFilter.get(i).setSelect(true);
+            } else {
+                arrayListFilter.get(i).setSelect(false);
+            }
+        }
+        return arrayListFilter;
+    }
+
+    private boolean isSelected(String title, List<BottomSheetData> arrayList) {
+        for (int j = 0; j < arrayList.size(); j++) {
+            if (title.trim().equals(arrayList.get(j).getTitle().trim())) {
+                if (arrayList.get(j).isSelect())
+                    return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     protected int getListCounter() {
         return arrayList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        ItemSelectorBinding binding;
+        private ItemSelectorBinding binding;
 
         public ViewHolder(@NonNull View itemView, @NonNull ItemSelectorBinding binding) {
             super(itemView);
             this.binding = binding;
         }
+    }
+
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                FilterResults filterResults = new FilterResults();
+                List<BottomSheetData> sheetData = new ArrayList<>();
+                for (int i = 0; i < arrayListFilter.size(); i++) {
+                    String trimSearchText = constraint.toString().trim().toLowerCase();
+                    String str = arrayListFilter.get(i).getTitle().toLowerCase().trim().toLowerCase();
+                    if (str.contains(trimSearchText)) {
+                        sheetData.add(arrayListFilter.get(i));
+                    }
+                }
+                filterResults.values = sheetData;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                arrayList = (List<BottomSheetData>) results.values;
+                notifyDataSetChanged();
+            }
+        };
     }
 }
