@@ -64,9 +64,55 @@
                 android:layout_below="@+id/tvSave"
                 android:visibility="gone">
 
-                <include
-                    android:id="@+id/search"
-                    layout="@layout/layout_search" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_7sdp">
+
+                        <EditText
+                            android:id="@+id/edtSearch"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_toStartOf="@+id/ivClose"
+                            android:background="@null"
+                            android:drawableStart="@drawable/ic_search_24"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:hint="@string/txt_search"
+                            android:imeOptions="actionSearch"
+                            android:includeFontPadding="false"
+                            android:inputType="text"
+                            android:drawableTint="@color/black"
+                            android:maxLines="1"
+                            android:paddingStart="@dimen/_8sdp"
+                            android:paddingEnd="@dimen/_8sdp"
+                            android:singleLine="true"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <ImageView
+                            android:id="@+id/ivClose"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            android:background="?attr/selectableItemBackground"
+                            android:padding="@dimen/_4sdp"
+                            android:tint="@color/black"
+                            android:src="@drawable/ic_clear_24dp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
 
             </RelativeLayout>
 

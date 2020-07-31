@@ -11,15 +11,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6459d845-2b24-4d18-a3c0-4ea0ef549ca2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/base/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/base/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helper/BottomSheetHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/java/com/android/rb/helper/BottomSheetHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/res/layout/bottom_sheet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/res/layout/bottom_sheet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/src/main/res/layout/layout_search.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_API_29" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="ee53da1e" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -62,8 +75,8 @@
     <property name="DEBUGGABLE_DEVICE" value="Pixel_3a_API_29 [emulator-5554]" />
     <property name="DEBUGGABLE_PROCESS" value="com.android.base" />
     <property name="DEBUGGER_ID" value="Auto" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3a_API_29" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-31T09:24:38.232Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="ee53da1e" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-31T10:04:24.966Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
@@ -270,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596187651179</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added Bottom Sheet Type&#10;&#10;- BottomSheetHelper.Type.singleSelection  //Single Selection&#10;- BottomSheetHelper.Type.singleSearch //Single Selection with Search&#10;- BottomSheetHelper.Type.multipleSelection //Multiple Selection&#10;- BottomSheetHelper.Type.multipleSearch //Multiple Selection with Search">
+      <created>1596189458323</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1596189458324</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -325,34 +345,34 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="608" y="276" key="AndroidProcessChooserDialog/0.23.1920.983@0.23.1920.983" timestamp="1596173035394" />
-    <state x="506" y="144" key="CommitChangelistDialog2" timestamp="1596187650196">
+    <state x="506" y="121" key="CommitChangelistDialog2" timestamp="1596189457444">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="506" y="144" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1596187650196" />
-    <state width="1395" height="393" key="GridCell.Tab.0.bottom" timestamp="1596189356437">
+    <state x="506" y="121" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1596189457444" />
+    <state width="1395" height="393" key="GridCell.Tab.0.bottom" timestamp="1596190072827">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state width="1395" height="393" key="GridCell.Tab.0.bottom/0.23.1920.983@0.23.1920.983" timestamp="1596189356437" />
-    <state width="1395" height="393" key="GridCell.Tab.0.center" timestamp="1596189356437">
+    <state width="1395" height="393" key="GridCell.Tab.0.bottom/0.23.1920.983@0.23.1920.983" timestamp="1596190072827" />
+    <state width="1395" height="393" key="GridCell.Tab.0.center" timestamp="1596190072826">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state width="1395" height="393" key="GridCell.Tab.0.center/0.23.1920.983@0.23.1920.983" timestamp="1596189356437" />
-    <state width="1395" height="393" key="GridCell.Tab.0.left" timestamp="1596189356437">
+    <state width="1395" height="393" key="GridCell.Tab.0.center/0.23.1920.983@0.23.1920.983" timestamp="1596190072826" />
+    <state width="1395" height="393" key="GridCell.Tab.0.left" timestamp="1596190072826">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state width="1395" height="393" key="GridCell.Tab.0.left/0.23.1920.983@0.23.1920.983" timestamp="1596189356437" />
-    <state width="1395" height="393" key="GridCell.Tab.0.right" timestamp="1596189356437">
+    <state width="1395" height="393" key="GridCell.Tab.0.left/0.23.1920.983@0.23.1920.983" timestamp="1596190072826" />
+    <state width="1395" height="393" key="GridCell.Tab.0.right" timestamp="1596190072827">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state width="1395" height="393" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1596189356437" />
+    <state width="1395" height="393" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1596190072827" />
     <state x="429" y="226" key="MultipleFileMergeDialog" timestamp="1595661534926">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="429" y="226" key="MultipleFileMergeDialog/0.23.1920.983@0.23.1920.983" timestamp="1595661534926" />
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1596187655465">
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1596189459832">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1596187655465" />
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1596189459832" />
     <state x="100" y="123" width="1237" height="761" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1595920706750">
       <screen x="0" y="23" width="1920" height="983" />
     </state>

@@ -96,7 +96,7 @@ public class BottomSheetHelper {
         sheetLayoutBinding.recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         if (this.type == Type.singleSearch || this.type == Type.multipleSearch) {
-            sheetLayoutBinding.search.edtSearch.addTextChangedListener(new TextWatcher() {
+            sheetLayoutBinding.edtSearch.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -114,11 +114,11 @@ public class BottomSheetHelper {
                 }
             });
 
-            sheetLayoutBinding.search.ivClose.setOnClickListener(new View.OnClickListener() {
+            sheetLayoutBinding.ivClose.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (!sheetLayoutBinding.search.edtSearch.getText().toString().isEmpty()) {
-                        sheetLayoutBinding.search.edtSearch.setText("");
+                    if (!sheetLayoutBinding.edtSearch.getText().toString().isEmpty()) {
+                        sheetLayoutBinding.edtSearch.setText("");
                     }
                 }
             });
