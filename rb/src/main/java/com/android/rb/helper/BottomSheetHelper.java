@@ -95,15 +95,6 @@ public class BottomSheetHelper {
 
         sheetLayoutBinding.recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-//        sheetLayoutBinding.tvSave.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                onBottomSheetResult.onResult(adapter.getList(adapter.arrayList));
-//                bottomSheetDialog.dismiss();
-//            }
-//        });
-
-
         if (this.type == Type.singleSearch || this.type == Type.multipleSearch) {
             sheetLayoutBinding.search.edtSearch.addTextChangedListener(new TextWatcher() {
                 @Override

@@ -37,7 +37,7 @@ public class MainActivity extends BaseActivity {
             }
         });*/
 
-        /*findViewById(R.id.btnClick).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btnClick).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new BottomSheetHelper(getContext(), "Testing Bottom Sheet", list, new BottomSheetHelper.OnBottomSheetResult() {
@@ -52,9 +52,8 @@ public class MainActivity extends BaseActivity {
                 //BottomSheetHelper.Type.singleSearch //Single Selection with Search
                 //BottomSheetHelper.Type.multipleSelection //Multiple Selection
                 //BottomSheetHelper.Type.multipleSearch //Multiple Selection with Search
-
             }
-        });*/
+        });
 
     }
 
