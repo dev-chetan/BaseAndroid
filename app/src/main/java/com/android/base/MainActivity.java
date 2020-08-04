@@ -21,7 +21,6 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initData();
 
         /*For Image Gallery
@@ -47,7 +46,7 @@ public class MainActivity extends BaseActivity {
                         list.addAll(arrayList);
                         Log.e("TAG", "onResult: ");
                     }
-                }, BottomSheetHelper.Type.multipleSelection);
+                }, BottomSheetHelper.Type.singleSelection);
                 //BottomSheetHelper.Type.singleSelection  //Single Selection
                 //BottomSheetHelper.Type.singleSearch //Single Selection with Search
                 //BottomSheetHelper.Type.multipleSelection //Multiple Selection
