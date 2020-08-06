@@ -327,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596699194517</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Changes documentation">
+      <created>1596699580749</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1596699580749</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -385,10 +392,10 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="608" y="276" key="AndroidProcessChooserDialog/0.23.1920.983@0.23.1920.983" timestamp="1596173035394" />
-    <state x="175" y="81" key="CommitChangelistDialog2" timestamp="1596699194280">
+    <state x="175" y="81" key="CommitChangelistDialog2" timestamp="1596699580454">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="175" y="81" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1596699194280" />
+    <state x="175" y="81" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1596699580454" />
     <state width="1395" height="341" key="GridCell.Tab.0.bottom" timestamp="1596691325854">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
@@ -409,10 +416,10 @@
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="429" y="226" key="MultipleFileMergeDialog/0.23.1920.983@0.23.1920.983" timestamp="1596692390818" />
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1596699196354">
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2" timestamp="1596699582083">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1596699196354" />
+    <state x="351" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.983@0.23.1920.983" timestamp="1596699582083" />
     <state x="100" y="123" width="1237" height="761" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1595920706750">
       <screen x="0" y="23" width="1920" height="983" />
     </state>

@@ -57,3 +57,19 @@ new DialogHelper("Are you sure you want to delete?", getContext().getString(R.st
                     }
 }, DialogStatus.DIALOG_DEFAULT).show(((AppCompatActivity) getContext()).getSupportFragmentManager(), "");
 ```
+
+#Bottom Sheet Dialog
+
+Types Of Bottom Sheet
+**BottomSheetHelper.Type.multipleSelection** Multiple selection
+**BottomSheetHelper.Type.singleSelection** Single selection
+**BottomSheetHelper.Type.singleSearch** Single selection with search
+**BottomSheetHelper.Type.multipleSearch** Multiple selection with search
+
+```java
+new BottomSheetHelper(getContext(), "" + text.getHint(), list, new BottomSheetHelper.OnBottomSheetResult() {
+            @Override
+            public void onResult(List<BottomSheetData> arrayList) {
+            }
+        }, BottomSheetHelper.Type.singleSearch);
+```
