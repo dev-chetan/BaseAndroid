@@ -2,7 +2,6 @@ package com.android.rb.helper;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -29,7 +28,7 @@ public class LoadingDialog extends Dialog {
             dialog.setContentView(view_lyt);
             dialog.setCancelable(cancelable);
             dialog.show();
-        } catch (Resources.NotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
