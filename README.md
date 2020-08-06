@@ -1,6 +1,3 @@
-#Base Classes
-
-
 # Android Users Permission
 ```java
 String[] perms = {Manifest.permission.CALL_PHONE};
@@ -40,4 +37,23 @@ loadNetworkProfile(imageUrl, (ImageView) findViewById(R.id.iv));
 
 String localImageUrl = "<Local Image Path>";
 oadStorageImage("", (ImageView) findViewById(R.id.iv));
+```
+
+# Dialog Functions
+
+Information Popup Dialog Single Button
+```java
+showInfoDialog(response.body().getMsg());
+```
+
+Information Popup Dialog Two Button With Action
+```java
+new DialogHelper("Are you sure you want to delete?", getContext().getString(R.string.txt_cancel), getContext().getString(R.string.txt_delete), new DialogHelper.DialogCallBack() {
+                    @Override
+                    public void onResult(int resultCode) {
+                        if (resultCode == 1) {
+                            
+                        }
+                    }
+}, DialogStatus.DIALOG_DEFAULT).show(((AppCompatActivity) getContext()).getSupportFragmentManager(), "");
 ```
