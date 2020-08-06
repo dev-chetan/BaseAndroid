@@ -22,7 +22,8 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        loadNetworkPDF("https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", (ImageView) findViewById(R.id.iv));
+        String pdfUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
+        loadNetworkPDF(pdfUrl, (ImageView) findViewById(R.id.iv));
 
         imageGallery();
         bottomSheetDialog();
