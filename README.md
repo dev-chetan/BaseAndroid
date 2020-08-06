@@ -1,3 +1,6 @@
+#Base Classes
+
+
 # Android Users Permission
 ```java
 String[] perms = {Manifest.permission.CALL_PHONE};
@@ -20,9 +23,21 @@ Then, add to your manifest `Manifest.xml`
             android:theme="@style/Permissions.TransparentTheme" />
 ```
                         
-# Load PDF File From ImageView 
+# Load Image Functions
 
+Load PDF form ImageView
 ```java
 String pdfUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
 loadNetworkPDF(pdfUrl, (ImageView) findViewById(R.id.iv));
+```
+
+Load Image form ImageView
+```java
+String imageUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.png";
+
+loadNetworkImage(imageUrl, (ImageView) findViewById(R.id.iv));
+loadNetworkProfile(imageUrl, (ImageView) findViewById(R.id.iv));
+
+String localImageUrl = "<Local Image Path>";
+oadStorageImage("", (ImageView) findViewById(R.id.iv));
 ```

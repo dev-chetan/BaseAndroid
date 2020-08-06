@@ -24,7 +24,6 @@ public class MainActivity extends BaseActivity {
 
         String pdfUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
         loadNetworkPDF(pdfUrl, (ImageView) findViewById(R.id.iv));
-
         imageGallery();
         bottomSheetDialog();
     }
