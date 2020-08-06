@@ -49,6 +49,14 @@ public abstract class BasePagerAdapter extends PagerAdapter {
         return (view == object);
     }
 
+    protected String removeLastChar(String str) {
+        return BaseHelper.getInstance().removeLastChar(str);
+    }
+
+    protected void loadNetworkPDF(String pdfUrl, ImageView imageView) {
+        BaseHelper.getInstance().loadNetworkPDF(getContext(), pdfUrl, imageView);
+    }
+
     protected File saveBitmap(Bitmap bitmap) {
         return BaseHelper.getInstance().saveBitmap(getContext(), bitmap);
     }

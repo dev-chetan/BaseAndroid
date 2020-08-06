@@ -19,4 +19,9 @@
              <activity
                         android:name="com.android.rb.helper.PermissionActivity"
                         android:theme="@style/Permissions.TransparentTheme" />
-                         
+                        
+# Added Load PDF File From ImageView 
+
+    String pdfUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
+    loadNetworkPDF(pdfUrl,
+        (ImageView) findViewById(R.id.iv));

@@ -61,6 +61,16 @@ public abstract class BaseAdapter<V extends RecyclerView.ViewHolder> extends Rec
 
     protected abstract void bindRViewHolder(V v, int position);
 
+
+
+    protected String removeLastChar(String str){
+        return BaseHelper.getInstance().removeLastChar(str);
+    }
+
+    protected void loadNetworkPDF(String pdfUrl, ImageView imageView) {
+        BaseHelper.getInstance().loadNetworkPDF(getContext(), pdfUrl, imageView);
+    }
+
     protected <T> T getAuth(Class<T> type) {
         return new Gson()
                 .fromJson(getPrefValue(Preferences.USER_DATA)
@@ -213,8 +223,8 @@ public abstract class BaseAdapter<V extends RecyclerView.ViewHolder> extends Rec
         BaseHelper.getInstance().loadPdf(getContext(), url);
     }
 
-    protected Calendar getLocalTime(String time) {
-        return BaseHelper.getInstance().getLocalTime(time);
+    protected Calendar getLocalTime(String time, String timeFormat) {
+        return BaseHelper.getInstance().getLocalTime(time, timeFormat);
     }
 
     protected String getTimeAgo(long time) {

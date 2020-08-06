@@ -52,6 +52,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private static File cameraFile;
 
+    protected String removeLastChar(String str) {
+        return BaseHelper.getInstance().removeLastChar(str);
+    }
+
     protected <T> T getAuth(Class<T> type) {
         return new Gson()
                 .fromJson(getPrefValue(Preferences.USER_DATA)
@@ -76,6 +80,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         setToolbar();
     }
 
+    protected void loadNetworkPDF(String pdfUrl, ImageView imageView) {
+        BaseHelper.getInstance().loadNetworkPDF(getContext(), pdfUrl, imageView);
+    }
+
 
     protected String capWord(String word) {
         return BaseHelper.getInstance().capWord(word);
@@ -94,8 +102,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         }, DialogStatus.DIALOG_DEFAULT).show(getSupportFragmentManager(), "");
     }
 
-    protected Calendar getLocalTime(String time) {
-        return BaseHelper.getInstance().getLocalTime(time);
+    protected Calendar getLocalTime(String time, String timeFormat) {
+        return BaseHelper.getInstance().getLocalTime(time, timeFormat);
     }
 
     protected String getTimeAgo(long time) {

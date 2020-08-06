@@ -124,7 +124,6 @@ public class BottomSheetHelper {
             });
         }
 
-        //BottomSheetBehavior.from(sheetLayoutBinding.rlMain).setState(BottomSheetBehavior.STATE_EXPANDED);
         if (this.type == Type.singleSearch || this.type == Type.multipleSearch) {
             setupFullHeight(bottomSheetDialog, context);
         }

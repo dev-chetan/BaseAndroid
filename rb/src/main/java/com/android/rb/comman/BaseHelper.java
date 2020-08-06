@@ -7,14 +7,19 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
+import android.graphics.pdf.PdfRenderer;
 import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
+import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.text.Html;
 import android.text.Spanned;
@@ -61,7 +66,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.net.URLEncoder;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -87,6 +95,7 @@ public class BaseHelper {
 
     private static LoadingDialog loadingDialog;
     private static BaseHelper instance;
+    private static final String FILE_PDF = ".pdf";
 
 
     public static BaseHelper getInstance() {
@@ -94,6 +103,83 @@ public class BaseHelper {
             instance = new BaseHelper();
         }
         return instance;
+    }
+
+    public void loadNetworkPDF(final Context context, final String pdfUrl, final ImageView imageView) {
+        imageError(imageView, false, context);
+        new AsyncTask<Void, Void, String>() {
+            @Override
+            protected String doInBackground(Void... voids) {
+                File filePath = null;
+                try {
+                    int MEGABYTE = 1024 * 1024;
+                    URL url = new URL(pdfUrl);
+                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                    urlConnection.connect();
+
+                    InputStream inputStream = urlConnection.getInputStream();
+                    filePath = getFilePath(context, FILE_PDF);
+                    FileOutputStream fileOutputStream = new FileOutputStream(filePath);
+                    int totalSize = urlConnection.getContentLength();
+
+                    byte[] buffer = new byte[MEGABYTE];
+                    int bufferLength = 0;
+                    while ((bufferLength = inputStream.read(buffer)) > 0) {
+                        fileOutputStream.write(buffer, 0, bufferLength);
+                    }
+                    fileOutputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return filePath.getAbsolutePath();
+            }
+
+            @Override
+            protected void onPostExecute(String filePath) {
+                super.onPostExecute(filePath);
+                try {
+                    processPDF(filePath, imageView);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }.execute();
+    }
+
+    private static void processPDF(String filePath, ImageView imageView) throws IOException {
+        File file = new File(filePath);
+
+        ParcelFileDescriptor fileDescriptor = null;
+        fileDescriptor = ParcelFileDescriptor.open(
+                file, ParcelFileDescriptor.MODE_READ_ONLY);
+
+        //min. API Level 21
+        PdfRenderer pdfRenderer = null;
+        pdfRenderer = new PdfRenderer(fileDescriptor);
+
+        final int pageCount = pdfRenderer.getPageCount();
+       /* Toast.makeText(getContext(), "pageCount = " + pageCount,
+                Toast.LENGTH_LONG).show();*/
+
+        //Display page 0
+        PdfRenderer.Page rendererPage = pdfRenderer.openPage(0);
+        int rendererPageWidth = rendererPage.getWidth();
+        int rendererPageHeight = rendererPage.getHeight();
+        Bitmap bitmap = Bitmap.createBitmap(
+                rendererPageWidth,
+                rendererPageHeight,
+                Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        canvas.drawColor(Color.WHITE);
+        canvas.drawBitmap(bitmap, 0, 0, null);
+        rendererPage.render(bitmap, null, null,
+                PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY);
+
+        imageView.setImageBitmap(bitmap);
+
+        rendererPage.close();
+        pdfRenderer.close();
+        fileDescriptor.close();
     }
 
     public File saveBitmap(Context context, Bitmap bitmap) {
@@ -562,12 +648,17 @@ public class BaseHelper {
                 : getMyDrawable(AppConfig.getInstance().getNoImagePlaceholder(), context));
     }
 
+    //Remove Last Character
+    public String removeLastChar(String str) {
+        if (str.equals("") || str == null) return "";
+        return str.substring(0, str.length() - 1);
+    }
 
     //Calendar & time
-    public Calendar getLocalTime(String time) {
+    public Calendar getLocalTime(String time, String timeFormat) {
         try {
             Calendar calendar = Calendar.getInstance();
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
+            SimpleDateFormat df = new SimpleDateFormat(timeFormat, Locale.ENGLISH);
             df.setTimeZone(TimeZone.getTimeZone("UTC"));
             Date date = df.parse(time);
             df.setTimeZone(TimeZone.getDefault());
@@ -718,6 +809,20 @@ public class BaseHelper {
                 getCompressFilePath(context).toString());
     }
 
+
+    public static File getFilePath(Context context, String extension) {
+        String state = Environment.getExternalStorageState();
+        File file;
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            file = new File(Environment.getExternalStorageDirectory(), context.getString(R.string.app_name) + "/");
+        } else {
+            file = new File(context.getFilesDir(), context.getString(R.string.app_name) + "/");
+        }
+        if (!file.exists())
+            file.mkdirs();
+        return new File(file, getRandomImageName(context, extension));
+    }
+
     //Path generator
     public File getFilePath(Context context) {
         String state = Environment.getExternalStorageState();
@@ -730,6 +835,12 @@ public class BaseHelper {
         if (!file.exists())
             file.mkdirs();
         return new File(file, getRandomImageName(context));
+    }
+
+    public static String getRandomImageName(Context context, String extension) {
+        Random r = new Random();
+        int i1 = r.nextInt(1000 - 1) + 65;
+        return context.getString(R.string.app_name).replace(" ", "_") + "_" + i1 + (extension.equals("") ? ".png" : extension);
     }
 
     public String getRandomImageName(Context context) {

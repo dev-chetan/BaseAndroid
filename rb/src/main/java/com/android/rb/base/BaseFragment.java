@@ -26,6 +26,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.File;
+import java.util.Calendar;
 
 public abstract class BaseFragment extends Fragment {
 
@@ -57,6 +58,14 @@ public abstract class BaseFragment extends Fragment {
         initView(view);
         setListener();
         setLabel();
+    }
+
+    protected String removeLastChar(String str){
+        return BaseHelper.getInstance().removeLastChar(str);
+    }
+
+    protected void loadNetworkPDF(String pdfUrl, ImageView imageView) {
+        BaseHelper.getInstance().loadNetworkPDF(getContext(), pdfUrl, imageView);
     }
 
     protected <T> T getAuth(Class<T> type) {
@@ -207,6 +216,10 @@ public abstract class BaseFragment extends Fragment {
     //get intent boolean
     public boolean getBooleanExtra(String key) {
         return BaseHelper.getInstance().getBooleanExtra(key, getContext());
+    }
+
+    protected Calendar getLocalTime(String time, String timeFormat) {
+        return BaseHelper.getInstance().getLocalTime(time, timeFormat);
     }
 
     //get intent string
