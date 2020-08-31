@@ -3,7 +3,6 @@ package com.android.base;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.android.rb.base.BaseActivity;
 import com.android.rb.helper.BottomSheetHelper;
@@ -17,40 +16,23 @@ public class MainActivity extends BaseActivity {
 
     private List<BottomSheetData> list = new ArrayList<>();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String pdfUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
-        loadNetworkPDF(pdfUrl, (ImageView) findViewById(R.id.iv));
-        imageGallery();
+//        String pdfUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
+//        loadNetworkPDF(pdfUrl, (ImageView) findViewById(R.id.iv));
+        // imageGallery();
+        // bottomSheetDialog();
         bottomSheetDialog();
     }
 
     private void bottomSheetDialog() {
-
-        list.add(new BottomSheetData(false, "Android"));
-        list.add(new BottomSheetData(false, "Ios"));
-        list.add(new BottomSheetData(false, "Java"));
-        list.add(new BottomSheetData(false, "PHP"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
-        list.add(new BottomSheetData(false, "Design"));
+        list.add(new BottomSheetData(false, "Android", "https://i.picsum.photos/id/935/45/25.jpg?hmac=SdeU4zlrDq0ldhD4JvpRiKfmCDPqzCGxF-FLLkFkHs4"));
+        list.add(new BottomSheetData(false, "Ios", "https://i.picsum.photos/id/935/45/25.jpg?hmac=SdeU4zlrDq0ldhD4JvpRiKfmCDPqzCGxF-FLLkFkHs4"));
+        list.add(new BottomSheetData(false, "Java", "https://i.picsum.photos/id/935/45/25.jpg?hmac=SdeU4zlrDq0ldhD4JvpRiKfmCDPqzCGxF-FLLkFkHs4"));
 
         //Bottom Sheet
         findViewById(R.id.btnClick).setOnClickListener(new View.OnClickListener() {

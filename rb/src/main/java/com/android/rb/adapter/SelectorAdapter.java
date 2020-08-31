@@ -48,6 +48,17 @@ public class SelectorAdapter extends BaseAdapter<SelectorAdapter.ViewHolder> {
         final BottomSheetData bottomSheetData = arrayList.get(position);
         holder.binding.tvCountry.setText(bottomSheetData.getTitle());
 
+        if (bottomSheetData.getDrawable() != 0 || bottomSheetData.getNetworkUrl() != null) {
+            holder.binding.iv.setVisibility(View.VISIBLE);
+            if (bottomSheetData.getDrawable() != 0) {
+                holder.binding.iv.setImageDrawable(getMyDrawable(bottomSheetData.getDrawable()));
+            } else {
+                loadNetworkImage(bottomSheetData.getNetworkUrl(), holder.binding.iv);
+            }
+        } else {
+            holder.binding.iv.setVisibility(View.GONE);
+        }
+
         if (bottomSheetData.isSelect()) {
             holder.binding.imgSelect.setImageDrawable(getMyDrawable(R.drawable.ic_baseline_radio_button_checked_24));
             holder.binding.imgSelect.setColorFilter(getMyColor(android.R.color.black));
@@ -84,7 +95,6 @@ public class SelectorAdapter extends BaseAdapter<SelectorAdapter.ViewHolder> {
                         arrayList.get(i).setSelect(false);
                     }
                     arrayList.get(position).setSelect(true);
-//                    onBottomSheetResult.onResult(getList(arrayList));
                     bottomSheetDialog.dismiss();
                 } else {
                     if (arrayList.get(position).isSelect()) {

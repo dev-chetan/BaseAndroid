@@ -4,11 +4,25 @@ public class BottomSheetData {
     private boolean isSelect;
     private int id;
     private String title;
+    private String networkUrl;
+    private int drawable;
 
     public BottomSheetData(boolean isSelect, int id, String title) {
         this.isSelect = isSelect;
         this.id = id;
         this.title = title;
+    }
+
+    public BottomSheetData(boolean isSelect, String title, int drawable) {
+        this.isSelect = isSelect;
+        this.title = title;
+        this.drawable = drawable;
+    }
+
+    public BottomSheetData(boolean isSelect, String title, String networkUrl) {
+        this.isSelect = isSelect;
+        this.title = title;
+        this.networkUrl = networkUrl;
     }
 
     public BottomSheetData(boolean isSelect, String title) {
@@ -17,6 +31,14 @@ public class BottomSheetData {
     }
 
     public BottomSheetData() {
+    }
+
+    public String getNetworkUrl() {
+        return networkUrl;
+    }
+
+    public int getDrawable() {
+        return drawable;
     }
 
     public int getId() {
