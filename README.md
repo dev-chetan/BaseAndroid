@@ -1,3 +1,8 @@
+# Lib version
+```gradle
+implementation 'com.github.dev-chetan:BaseAndroid:1.2.5'
+```
+
 # Android Users Permission
 ```java
 String[] perms = {Manifest.permission.CALL_PHONE};
