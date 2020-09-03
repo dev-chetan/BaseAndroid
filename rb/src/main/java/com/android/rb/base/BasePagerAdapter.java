@@ -12,6 +12,7 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.android.rb.comman.BaseHelper;
 import com.android.rb.helper.Preferences;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -37,6 +38,41 @@ public abstract class BasePagerAdapter extends PagerAdapter {
     public final void destroyItem(ViewGroup container, int position, Object object) {
         View view = (View) object;
         container.removeView(view);
+    }
+
+    /**
+     * Set input cursor to end of the string.
+     * @param content
+     * @return
+     */
+    protected int getSelection(String content) {
+        try {
+            if (!content.equals("")) {
+                return content.length();
+            } else {
+                return 0;
+            }
+        } catch (NullPointerException e) {
+            return 0;
+        }
+    }
+
+    /**
+     * Set input fields as required. (ex Username*)
+     *
+     * @param textInputLayout
+     */
+    protected void setRequired(TextInputLayout textInputLayout) {
+        BaseHelper.getInstance().setRequired(textInputLayout);
+    }
+
+    /**
+     * Give R.dimen.xyz here file
+     * @param size
+     * @return
+     */
+    protected int getMyDimen(int size) {
+        return BaseHelper.getInstance().getMyDimen(getContext(),size);
     }
 
     //Calling
@@ -111,5 +147,7 @@ public abstract class BasePagerAdapter extends PagerAdapter {
     protected void loadStorageImage(String url, ImageView imageView) {
         BaseHelper.getInstance().loadStorageImage(url, imageView, getContext());
     }
+
+
 
 }

@@ -24,6 +24,7 @@ import com.android.rb.helper.Preferences;
 import com.android.rb.interf.ImageReceiveListener;
 import com.android.rb.interf.RBImageCropListener;
 import com.android.rb.interf.RBImagePickerListener;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -51,6 +52,41 @@ public abstract class BaseActivity extends AppCompatActivity {
     private static final int REQUEST_CAMERA_IMAGE_CROP = 1004;
 
     private static File cameraFile;
+
+    /**
+     * Set input cursor to end of the string.
+     * @param content
+     * @return
+     */
+    protected int getSelection(String content) {
+        try {
+            if (!content.equals("")) {
+                return content.length();
+            } else {
+                return 0;
+            }
+        } catch (NullPointerException e) {
+            return 0;
+        }
+    }
+
+    /**
+     * Set input fields as required. (ex Username*)
+     *
+     * @param textInputLayout
+     */
+    protected void setRequired(TextInputLayout textInputLayout) {
+        BaseHelper.getInstance().setRequired(textInputLayout);
+    }
+
+    /**
+     * Give R.dimen.xyz here file
+     * @param size
+     * @return
+     */
+    protected int getMyDimen(int size) {
+        return BaseHelper.getInstance().getMyDimen(getContext(),size);
+    }
 
     protected String removeLastChar(String str) {
         return BaseHelper.getInstance().removeLastChar(str);
@@ -120,7 +156,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract void initView();
 
-    protected abstract void setLabel();
+    protected void setLabel() {
+    }
 
     protected void setListener() {
     }

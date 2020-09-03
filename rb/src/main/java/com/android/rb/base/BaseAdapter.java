@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.rb.comman.BaseHelper;
 import com.android.rb.helper.Preferences;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -61,7 +62,40 @@ public abstract class BaseAdapter<V extends RecyclerView.ViewHolder> extends Rec
 
     protected abstract void bindRViewHolder(V v, int position);
 
+    /**
+     * Set input cursor to end of the string.
+     * @param content
+     * @return
+     */
+    protected int getSelection(String content) {
+        try {
+            if (!content.equals("")) {
+                return content.length();
+            } else {
+                return 0;
+            }
+        } catch (NullPointerException e) {
+            return 0;
+        }
+    }
 
+    /**
+     * Set input fields as required. (ex Username*)
+     *
+     * @param textInputLayout
+     */
+    protected void setRequired(TextInputLayout textInputLayout) {
+        BaseHelper.getInstance().setRequired(textInputLayout);
+    }
+
+    /**
+     * Give R.dimen.xyz here file
+     * @param size
+     * @return
+     */
+    protected int getMyDimen(int size) {
+        return BaseHelper.getInstance().getMyDimen(getContext(),size);
+    }
 
     protected String removeLastChar(String str){
         return BaseHelper.getInstance().removeLastChar(str);

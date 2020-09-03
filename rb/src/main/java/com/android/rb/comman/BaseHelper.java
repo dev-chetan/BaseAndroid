@@ -23,6 +23,7 @@ import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.text.Html;
 import android.text.Spanned;
+import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -59,6 +60,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.GsonBuilder;
 
 import java.io.ByteArrayOutputStream;
@@ -860,6 +862,43 @@ public class BaseHelper {
         if (!file.exists())
             file.mkdirs();
         return new File(file, getRandomImageName(context));
+    }
+
+    /**
+     * Give R.dimen.xyz here file
+     *
+     * @param size
+     * @return
+     */
+    public int getMyDimen(Context context, int size) {
+        return context.getResources().getDimensionPixelSize(size);
+    }
+
+    /**
+     * Set input fields as required. (ex Username*)
+     * @param textInputLayout
+     */
+    public void setRequired(TextInputLayout textInputLayout) {
+        textInputLayout.setHint(
+                TextUtils.concat(
+                        textInputLayout.getHint(), "*"));
+    }
+
+    /**
+     * Set input cursor to end of the string.
+     * @param content
+     * @return
+     */
+    int getSelection(String content) {
+        try {
+            if (!content.equals("")) {
+                return content.length();
+            } else {
+                return 0;
+            }
+        } catch (NullPointerException e) {
+            return 0;
+        }
     }
 
 }
