@@ -41,7 +41,29 @@ public abstract class BasePagerAdapter extends PagerAdapter {
     }
 
     /**
+     * Remove last char form string
+     *
+     * @param str
+     * @return
+     */
+    public String removeLastChar(String str) {
+        return BaseHelper.getInstance().removeLastChar(str);
+    }
+
+    /**
+     * Remove last char form string
+     *
+     * @param str   content
+     * @param count how many char you want to remove from last of content
+     * @return
+     */
+    public String removeLastChar(String str, int count) {
+        return BaseHelper.getInstance().removeLastChar(str, count);
+    }
+
+    /**
      * Set input cursor to end of the string.
+     *
      * @param content
      * @return
      */
@@ -68,11 +90,12 @@ public abstract class BasePagerAdapter extends PagerAdapter {
 
     /**
      * Give R.dimen.xyz here file
+     *
      * @param size
      * @return
      */
     protected int getMyDimen(int size) {
-        return BaseHelper.getInstance().getMyDimen(getContext(),size);
+        return BaseHelper.getInstance().getMyDimen(getContext(), size);
     }
 
     //Calling
@@ -83,10 +106,6 @@ public abstract class BasePagerAdapter extends PagerAdapter {
     @Override
     public final boolean isViewFromObject(View view, Object object) {
         return (view == object);
-    }
-
-    protected String removeLastChar(String str) {
-        return BaseHelper.getInstance().removeLastChar(str);
     }
 
     protected void loadNetworkPDF(String pdfUrl, ImageView imageView) {
@@ -121,7 +140,7 @@ public abstract class BasePagerAdapter extends PagerAdapter {
         }
     }
 
-    protected  <T> void setAuth(Context context, T cls) {
+    protected <T> void setAuth(Context context, T cls) {
         String s = new Gson().toJson(cls);
         Preferences.setValue(context, Preferences.USER_DATA, s);
     }
@@ -147,7 +166,6 @@ public abstract class BasePagerAdapter extends PagerAdapter {
     protected void loadStorageImage(String url, ImageView imageView) {
         BaseHelper.getInstance().loadStorageImage(url, imageView, getContext());
     }
-
 
 
 }

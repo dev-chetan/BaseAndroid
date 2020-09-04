@@ -62,6 +62,27 @@ public abstract class BaseFragment extends Fragment {
     }
 
     /**
+     * Remove last char form string
+     *
+     * @param str
+     * @return
+     */
+    public String removeLastChar(String str) {
+        return BaseHelper.getInstance().removeLastChar(str);
+    }
+
+    /**
+     * Remove last char form string
+     *
+     * @param str   content
+     * @param count how many char you want to remove from last of content
+     * @return
+     */
+    public String removeLastChar(String str, int count) {
+        return BaseHelper.getInstance().removeLastChar(str, count);
+    }
+
+    /**
      * Set input cursor to end of the string.
      * @param content
      * @return
@@ -94,10 +115,6 @@ public abstract class BaseFragment extends Fragment {
      */
     protected int getMyDimen(int size) {
         return BaseHelper.getInstance().getMyDimen(getContext(),size);
-    }
-
-    protected String removeLastChar(String str){
-        return BaseHelper.getInstance().removeLastChar(str);
     }
 
     protected void loadNetworkPDF(String pdfUrl, ImageView imageView) {

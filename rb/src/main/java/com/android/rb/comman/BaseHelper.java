@@ -650,12 +650,6 @@ public class BaseHelper {
                 : getMyDrawable(AppConfig.getInstance().getNoImagePlaceholder(), context));
     }
 
-    //Remove Last Character
-    public String removeLastChar(String str) {
-        if (str.equals("") || str == null) return "";
-        return str.substring(0, str.length() - 1);
-    }
-
     //Calendar & time
     public Calendar getLocalTime(String time, String timeFormat) {
         try {
@@ -876,6 +870,7 @@ public class BaseHelper {
 
     /**
      * Set input fields as required. (ex Username*)
+     *
      * @param textInputLayout
      */
     public void setRequired(TextInputLayout textInputLayout) {
@@ -886,10 +881,11 @@ public class BaseHelper {
 
     /**
      * Set input cursor to end of the string.
+     *
      * @param content
      * @return
      */
-    int getSelection(String content) {
+    public int getSelection(String content) {
         try {
             if (!content.equals("")) {
                 return content.length();
@@ -901,4 +897,26 @@ public class BaseHelper {
         }
     }
 
+    /**
+     * Remove last char form string
+     *
+     * @param str
+     * @return
+     */
+    public String removeLastChar(String str) {
+        if (str.equals("") || str == null) return "";
+        return str.substring(0, str.length() - 1);
+    }
+
+    /**
+     * Remove last char form string
+     *
+     * @param str   content
+     * @param count how many char you want to remove from last of content
+     * @return
+     */
+    public String removeLastChar(String str, int count) {
+        if (str.equals("") || str == null) return "";
+        return str.substring(0, str.length() - count);
+    }
 }

@@ -54,7 +54,29 @@ public abstract class BaseActivity extends AppCompatActivity {
     private static File cameraFile;
 
     /**
+     * Remove last char form string
+     *
+     * @param str
+     * @return
+     */
+    public String removeLastChar(String str) {
+        return BaseHelper.getInstance().removeLastChar(str);
+    }
+
+    /**
+     * Remove last char form string
+     *
+     * @param str   content
+     * @param count how many char you want to remove from last of content
+     * @return
+     */
+    public String removeLastChar(String str, int count) {
+        return BaseHelper.getInstance().removeLastChar(str, count);
+    }
+
+    /**
      * Set input cursor to end of the string.
+     *
      * @param content
      * @return
      */
@@ -81,15 +103,12 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * Give R.dimen.xyz here file
+     *
      * @param size
      * @return
      */
     protected int getMyDimen(int size) {
-        return BaseHelper.getInstance().getMyDimen(getContext(),size);
-    }
-
-    protected String removeLastChar(String str) {
-        return BaseHelper.getInstance().removeLastChar(str);
+        return BaseHelper.getInstance().getMyDimen(getContext(), size);
     }
 
     protected <T> T getAuth(Class<T> type) {
