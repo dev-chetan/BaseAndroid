@@ -177,29 +177,21 @@ public abstract class BaseAdapter<V extends RecyclerView.ViewHolder> extends Rec
         return BaseHelper.getInstance().isConnected(getContext());
     }
 
-//    public ApiInterface getApiInterface() {
-//        return BaseHelper.getApiInterface();
-//    }
-//
-//    public String printRes(Response<?> response) {
-//        return BaseHelper.printRes(response);
-//    }
-//
-//    protected void printParams(Map<?, ?> map) {
-//        BaseHelper.printParams(map);
-//    }
-//
-//    public void printError(Call<?> call, Throwable t) {
-//        BaseHelper.printError(call, t);
-//    }
-//
-//
-//    public String getBasicAuth() {
-//        return BaseHelper.getBasicAuth(getContext());
-//    }
+    //Pref
+    protected void setPrefValue(String key, String value) {
+        BaseHelper.getInstance().setPrefValue(key, value, getContext());
+    }
+
+    protected void setPrefBool(String key, boolean value) {
+        BaseHelper.getInstance().setPrefBool(key, value, getContext());
+    }
 
     protected String getPrefValue(String key) {
         return BaseHelper.getInstance().getPrefValue(key, getContext());
+    }
+
+    public boolean getPrefBool(String key) {
+        return BaseHelper.getInstance().getPrefBool(key, getContext());
     }
 
     protected String getLangValue(String key) {
