@@ -84,6 +84,7 @@ public abstract class BaseFragment extends Fragment {
 
     /**
      * Set input cursor to end of the string.
+     *
      * @param content
      * @return
      */
@@ -110,11 +111,12 @@ public abstract class BaseFragment extends Fragment {
 
     /**
      * Give R.dimen.xyz here file
+     *
      * @param size
      * @return
      */
     protected int getMyDimen(int size) {
-        return BaseHelper.getInstance().getMyDimen(getContext(),size);
+        return BaseHelper.getInstance().getMyDimen(getContext(), size);
     }
 
     protected void loadNetworkPDF(String pdfUrl, ImageView imageView) {
@@ -304,7 +306,7 @@ public abstract class BaseFragment extends Fragment {
         return BaseHelper.getInstance().isConnected(getContext());
     }
 
-//    public ApiInterface getApiInterface() {
+    //    public ApiInterface getApiInterface() {
 //        return BaseHelper.getApiInterface();
 //    }
 //
@@ -338,7 +340,7 @@ public abstract class BaseFragment extends Fragment {
 //    }
 
     protected void rbImagePicker(final RBImagePickerListener listener, final boolean isCrop) {
-        rbImagePicker(new RBImagePickerListener() {
+        BaseHelper.getInstance().rbImagePicker(new RBImagePickerListener() {
             @Override
             public void onRBPickerResult(String imagePath) {
                 if (isCrop) {
@@ -356,7 +358,7 @@ public abstract class BaseFragment extends Fragment {
                     }
                 });
             }
-        }, isCrop);
+        }, getContext());
     }
 
     protected void rbCropImage(String imagePath, final RBImageCropListener listener) {
