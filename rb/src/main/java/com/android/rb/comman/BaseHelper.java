@@ -20,6 +20,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
 import android.os.ParcelFileDescriptor;
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.text.Html;
 import android.text.Spanned;
@@ -918,5 +919,23 @@ public class BaseHelper {
     public String removeLastChar(String str, int count) {
         if (str.equals("") || str == null) return "";
         return str.substring(0, str.length() - count);
+    }
+
+    /**
+     * Call save contact intent
+     * @param context
+     * @param phone
+     * @param name
+     * @param email
+     */
+    public void saveContact(Context context, String phone, String name, String email) {
+        Intent intent = new Intent(ContactsContract.Intents.Insert.ACTION);
+        intent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
+        intent.putExtra(ContactsContract.Intents.Insert.EMAIL, email)
+                .putExtra(ContactsContract.Intents.Insert.NAME, name)
+                .putExtra(ContactsContract.Intents.Insert.EMAIL_TYPE, ContactsContract.CommonDataKinds.Email.TYPE_WORK)
+                .putExtra(ContactsContract.Intents.Insert.PHONE, phone)
+                .putExtra(ContactsContract.Intents.Insert.PHONE_TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_WORK);
+        context.startActivity(intent);
     }
 }

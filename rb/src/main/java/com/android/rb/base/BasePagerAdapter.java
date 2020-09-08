@@ -41,6 +41,18 @@ public abstract class BasePagerAdapter extends PagerAdapter {
     }
 
     /**
+     * Call save contact intent
+     *
+     * @param context
+     * @param phone
+     * @param name
+     * @param email
+     */
+    public void saveContact(Context context, String phone, String name, String email) {
+        BaseHelper.getInstance().saveContact(context, phone, name, email);
+    }
+
+    /**
      * Remove last char form string
      *
      * @param str

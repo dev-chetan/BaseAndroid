@@ -94,8 +94,13 @@ new BottomSheetHelper(getContext(), "" + text.getHint(), list, new BottomSheetHe
     edtFirstName.setSelection(getSelection(edtFirstName));
  ```
 
- # This method is used to remove last char from string content
+# This method is used to remove last char from string content
   ```java
      removeLastChar("Hello,"); // remove last char
      removeLastChar("Hello,,",2); // remove last no of 2 char
+  ```
+
+# This method is used to remove last char from string content
+  ```java
+     saveContact(this,"99134***","abc","abc@123")
   ```

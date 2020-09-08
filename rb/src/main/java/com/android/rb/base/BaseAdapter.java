@@ -63,6 +63,18 @@ public abstract class BaseAdapter<V extends RecyclerView.ViewHolder> extends Rec
     protected abstract void bindRViewHolder(V v, int position);
 
     /**
+     * Call save contact intent
+     *
+     * @param context
+     * @param phone
+     * @param name
+     * @param email
+     */
+    public void saveContact(Context context, String phone, String name, String email) {
+        BaseHelper.getInstance().saveContact(context, phone, name, email);
+    }
+
+    /**
      * Remove last char form string
      *
      * @param str
