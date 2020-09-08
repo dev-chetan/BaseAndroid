@@ -80,3 +80,22 @@ new BottomSheetHelper(getContext(), "" + text.getHint(), list, new BottomSheetHe
             }
         }, BottomSheetHelper.Type.singleSearch);
 ```
+
+# Set fields as required.
+ - If you want to set asterisk sign(*) to input fields then use this method lik below
+```java
+   setRequired(textInputUser)
+```
+ - Output : Username*
+
+ # Set cursor to last index in input field.
+ ```java
+    edtFirstName.setText("John");
+    edtFirstName.setSelection(getSelection(edtFirstName));
+ ```
+
+ # This method is used to remove last char from string content
+  ```java
+     removeLastChar("Hello,"); // remove last char
+     removeLastChar("Hello,,",2); // remove last no of 2 char
+  ```
