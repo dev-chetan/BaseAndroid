@@ -11,12 +11,15 @@ import android.widget.ImageView;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.android.rb.comman.BaseHelper;
+import com.android.rb.helper.DialogMultiImageHelper;
 import com.android.rb.helper.Preferences;
+import com.android.rb.interf.RBMultipleImagePickerListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public abstract class BasePagerAdapter extends PagerAdapter {
     private Context context;
@@ -38,6 +41,20 @@ public abstract class BasePagerAdapter extends PagerAdapter {
     public final void destroyItem(ViewGroup container, int position, Object object) {
         View view = (View) object;
         container.removeView(view);
+    }
+
+    /**
+     * Multiple Image Get
+     *
+     * @param rbMultipleImagePickerListener
+     */
+    protected void rbImageMultiPicker(final RBMultipleImagePickerListener rbMultipleImagePickerListener) {
+        BaseHelper.getInstance().rbImageMultiPicker(new RBMultipleImagePickerListener() {
+            @Override
+            public void onRBPickerResult(ArrayList<DialogMultiImageHelper.ImageData> arrayList) {
+                rbMultipleImagePickerListener.onRBPickerResult(arrayList);
+            }
+        }, getContext());
     }
 
     /**

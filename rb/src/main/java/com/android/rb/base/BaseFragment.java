@@ -18,15 +18,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.rb.comman.BaseHelper;
 import com.android.rb.helper.DialogCropHelper;
+import com.android.rb.helper.DialogMultiImageHelper;
 import com.android.rb.helper.Preferences;
 import com.android.rb.interf.ImageReceiveListener;
 import com.android.rb.interf.RBImageCropListener;
 import com.android.rb.interf.RBImagePickerListener;
+import com.android.rb.interf.RBMultipleImagePickerListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public abstract class BaseFragment extends Fragment {
@@ -59,6 +62,19 @@ public abstract class BaseFragment extends Fragment {
         initView(view);
         setListener();
         setLabel();
+    }
+
+    /**
+     * Multiple Image Get
+     * @param rbMultipleImagePickerListener
+     */
+    protected void rbImageMultiPicker(final RBMultipleImagePickerListener rbMultipleImagePickerListener) {
+        BaseHelper.getInstance().rbImageMultiPicker(new RBMultipleImagePickerListener() {
+            @Override
+            public void onRBPickerResult(ArrayList<DialogMultiImageHelper.ImageData> arrayList) {
+                rbMultipleImagePickerListener.onRBPickerResult(arrayList);
+            }
+        }, getContext());
     }
 
     /**

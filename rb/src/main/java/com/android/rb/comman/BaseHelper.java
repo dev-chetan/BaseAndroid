@@ -46,6 +46,7 @@ import com.android.rb.AppConfig;
 import com.android.rb.R;
 import com.android.rb.helper.DialogCropHelper;
 import com.android.rb.helper.DialogHelper;
+import com.android.rb.helper.DialogMultiImageHelper;
 import com.android.rb.helper.DialogStatus;
 import com.android.rb.helper.ImageCompress;
 import com.android.rb.helper.LoadingDialog;
@@ -54,6 +55,7 @@ import com.android.rb.helper.PermissionUtil;
 import com.android.rb.helper.Preferences;
 import com.android.rb.interf.ImageReceiveListener;
 import com.android.rb.interf.RBImagePickerListener;
+import com.android.rb.interf.RBMultipleImagePickerListener;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
@@ -63,6 +65,8 @@ import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.GsonBuilder;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -79,12 +83,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 import java.util.TimeZone;
 
 import gun0912.tedimagepicker.builder.TedImagePicker;
+import gun0912.tedimagepicker.builder.listener.OnMultiSelectedListener;
 import gun0912.tedimagepicker.builder.listener.OnSelectedListener;
 
 
@@ -738,6 +744,40 @@ public class BaseHelper {
             }
         });
     }
+
+
+    //Image processing
+    public void rbImageMultiPicker(final RBMultipleImagePickerListener rbMultipleImagePickerListener, final Context context) {
+        String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE
+                , Manifest.permission.WRITE_EXTERNAL_STORAGE
+                , Manifest.permission.CAMERA};
+        PermissionUtil.permission(((AppCompatActivity) context), perms, new PermissionHandler() {
+            @Override
+            public void onGranted() {
+                openRbPicker(context);
+            }
+
+            private void openRbPicker(final Context context) {
+                TedImagePicker.with(context).image().mediaType(gun0912.tedimagepicker.builder.type.MediaType.IMAGE).startMultiImage(new OnMultiSelectedListener() {
+                    @Override
+                    public void onSelected(@NotNull List<? extends Uri> list) {
+                        new DialogMultiImageHelper(context, list, new RBMultipleImagePickerListener() {
+                            @Override
+                            public void onRBPickerResult(ArrayList<DialogMultiImageHelper.ImageData> arrayList) {
+                                rbMultipleImagePickerListener.onRBPickerResult(arrayList);
+                            }
+                        }, true);
+                    }
+                });
+            }
+
+            @Override
+            public void onDenied() {
+                toast(context.getString(R.string.txt_permission_deny), context);
+            }
+        });
+    }
+
 
     public void cropImage(String path, int rotation, Context context, final ImageReceiveListener listener) {
         BitmapFactory.Options options = new BitmapFactory.Options();
