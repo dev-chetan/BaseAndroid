@@ -9,6 +9,7 @@ public class AppConfig {
     private int colorPrimary = android.R.color.white;
     private int colorBackground = android.R.color.white;
 
+
     public int getColorBackground() {
         return colorBackground;
     }
