@@ -104,3 +104,13 @@ new BottomSheetHelper(getContext(), "" + text.getHint(), list, new BottomSheetHe
   ```java
      saveContact(this,"99134***","abc","abc@123")
   ```
+
+# This method is used to get multiple image with crop
+  ```java
+      rbImageMultiPicker(new RBMultipleImagePickerListener() {
+                         @Override
+                         public void onRBPickerResult(ArrayList<DialogMultiImageHelper.ImageData> arrayList) {
+                             Log.e(TAG, "onRBPickerResult: " + arrayList.size());
+                         }
+                     });
+  ```
