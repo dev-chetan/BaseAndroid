@@ -54,7 +54,7 @@ public class MultiImagesAdapter extends BaseAdapter<MultiImagesAdapter.ViewHolde
         else {
             viewHolder.binding.rlMain.setBackgroundColor(getMyColor(R.color.colorGray));
         }
-        loadNetworkImage(imageData.getImgUri(), viewHolder.binding.iv);
+        loadNetworkImage(imageData.getPath(), viewHolder.binding.iv);
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -20,7 +20,6 @@ import com.android.rb.comman.BaseHelper;
 import com.android.rb.helper.DialogCropHelper;
 import com.android.rb.helper.DialogMultiImageHelper;
 import com.android.rb.helper.Preferences;
-import com.android.rb.interf.ImageReceiveListener;
 import com.android.rb.interf.RBImageCropListener;
 import com.android.rb.interf.RBImagePickerListener;
 import com.android.rb.interf.RBMultipleImagePickerListener;
@@ -34,24 +33,6 @@ import java.util.Calendar;
 
 public abstract class BaseFragment extends Fragment {
 
-    protected static final int REQUEST_CODE_SELECT_ADD_CASH = 100;
-    protected static final int REQUEST_CODE_SELECT_ADD_BANK = 101;
-    protected static final int REQUEST_CODE_SELECT_CATEGORY = 102;
-    protected static final int REQUEST_CODE_SELECT_SUB_CATEGORY = 103;
-    protected static final int REQUEST_CODE_SELECT_LOCATION = 104;
-    protected static final int REQUEST_CODE_SELECT_FILTER = 105;
-    protected static final int REQUEST_CODE_EDIT_PROFILE = 106;
-    protected static final int REQUEST_CODE_EDIT_COVER_PHOTOS = 107;
-    protected static final int REQUEST_CODE_EDIT_PRODUCT_PHOTOS = 108;
-    protected static final int REQUEST_CODE_EDIT_CARD = 109;
-    private ImageReceiveListener listener;
-
-    private static final int REQUEST_IMAGE = 1000;
-    private static final int REQUEST_CAMERA = 1001;
-    private static final int REQUEST_IMAGE_CROP = 1002;
-    private static final int REQUEST_CAMERA_IMAGE_CROP = 1004;
-
-    private static File cameraFile;
     private Context context;
 
 
@@ -65,6 +46,30 @@ public abstract class BaseFragment extends Fragment {
     }
 
     /**
+     * Model class to String
+     *
+     * @param type Model class
+     * @param <T>  Model class
+     * @return
+     */
+    protected <T> String toJson(T type) {
+        return new Gson().toJson(type);
+    }
+
+    /**
+     * Get Data Json String To Model
+     *
+     * @param type
+     * @param jsonString
+     * @param <T>
+     * @return
+     */
+    protected <T> String getModelFromJsonString(Class<T> type, String jsonString) {
+        return new Gson()
+                .fromJson(jsonString, TypeToken.getParameterized(type, type).getType());
+    }
+
+    /**
      * Multiple Image Get
      * @param rbMultipleImagePickerListener
      */
@@ -75,6 +80,20 @@ public abstract class BaseFragment extends Fragment {
                 rbMultipleImagePickerListener.onRBPickerResult(arrayList);
             }
         }, getContext());
+    }
+
+    /**
+     * Multiple Image Get
+     *
+     * @param rbMultipleImagePickerListener
+     */
+    protected void rbImageMultiPicker(final RBMultipleImagePickerListener rbMultipleImagePickerListener, int limit) {
+        BaseHelper.getInstance().rbImageMultiPicker(new RBMultipleImagePickerListener() {
+            @Override
+            public void onRBPickerResult(ArrayList<DialogMultiImageHelper.ImageData> arrayList) {
+                rbMultipleImagePickerListener.onRBPickerResult(arrayList);
+            }
+        }, getContext(), limit);
     }
 
     /**

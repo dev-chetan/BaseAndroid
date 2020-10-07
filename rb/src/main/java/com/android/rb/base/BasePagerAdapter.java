@@ -44,6 +44,30 @@ public abstract class BasePagerAdapter extends PagerAdapter {
     }
 
     /**
+     * Model class to String
+     *
+     * @param type Model class
+     * @param <T>  Model class
+     * @return
+     */
+    protected <T> String toJson(T type) {
+        return new Gson().toJson(type);
+    }
+
+    /**
+     * Get Data Json String To Model
+     *
+     * @param type
+     * @param jsonString
+     * @param <T>
+     * @return
+     */
+    protected <T> String getModelFromJsonString(Class<T> type, String jsonString) {
+        return new Gson()
+                .fromJson(jsonString, TypeToken.getParameterized(type, type).getType());
+    }
+
+    /**
      * Multiple Image Get
      *
      * @param rbMultipleImagePickerListener
@@ -55,6 +79,20 @@ public abstract class BasePagerAdapter extends PagerAdapter {
                 rbMultipleImagePickerListener.onRBPickerResult(arrayList);
             }
         }, getContext());
+    }
+
+    /**
+     * Multiple Image Get
+     *
+     * @param rbMultipleImagePickerListener
+     */
+    protected void rbImageMultiPicker(final RBMultipleImagePickerListener rbMultipleImagePickerListener, int limit) {
+        BaseHelper.getInstance().rbImageMultiPicker(new RBMultipleImagePickerListener() {
+            @Override
+            public void onRBPickerResult(ArrayList<DialogMultiImageHelper.ImageData> arrayList) {
+                rbMultipleImagePickerListener.onRBPickerResult(arrayList);
+            }
+        }, getContext(), limit);
     }
 
     /**

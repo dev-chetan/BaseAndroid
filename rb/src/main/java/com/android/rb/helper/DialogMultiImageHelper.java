@@ -98,12 +98,13 @@ public class DialogMultiImageHelper extends Dialog {
                 ImageData imageData = arrayListForImage.get(binding.pageView.getCurrentItem());
                 BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                Bitmap bitmap = BitmapFactory.decodeFile(new File(imageData.getImgUri()).getAbsolutePath(), options);
-                BitmapFactory.decodeFile(new File(imageData.getImgUri()).getAbsolutePath(), options);
+                Bitmap bitmap = BitmapFactory.decodeFile(new File(imageData.getPath()).getAbsolutePath(), options);
+                BitmapFactory.decodeFile(new File(imageData.getPath()).getAbsolutePath(), options);
                 new DialogCropHelper(context, bitmap, new DialogCropHelper.OnResultReceived() {
                     @Override
                     public void onResult(String cropImagePath) {
-                        arrayListForImage.get(binding.pageView.getCurrentItem()).setImgUri(cropImagePath);
+                        if (cropImagePath.equals("")) return;
+                        arrayListForImage.get(binding.pageView.getCurrentItem()).setPath(cropImagePath);
                         ((Activity) context).runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -190,27 +191,27 @@ public class DialogMultiImageHelper extends Dialog {
 
     public class ImageData {
         private boolean isSelected;
-        private String imgUri;
+        private String path;
 
-        public ImageData(boolean isSelected, String imgUri) {
+        public ImageData(boolean isSelected, String path) {
             this.isSelected = isSelected;
-            this.imgUri = imgUri;
-        }
-
-        public void setImgUri(String imgUri) {
-            this.imgUri = imgUri;
-        }
-
-        public void setSelected(boolean selected) {
-            isSelected = selected;
+            this.path = path;
         }
 
         public boolean isSelected() {
             return isSelected;
         }
 
-        public String getImgUri() {
-            return imgUri;
+        public void setSelected(boolean selected) {
+            isSelected = selected;
+        }
+
+        public String getPath() {
+            return path;
+        }
+
+        public void setPath(String path) {
+            this.path = path;
         }
     }
 }

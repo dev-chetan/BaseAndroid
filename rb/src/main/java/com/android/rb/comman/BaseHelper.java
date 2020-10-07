@@ -748,6 +748,16 @@ public class BaseHelper {
 
     //Image processing
     public void rbImageMultiPicker(final RBMultipleImagePickerListener rbMultipleImagePickerListener, final Context context) {
+        tempImageMultiPicker(rbMultipleImagePickerListener, context, 0);
+    }
+
+    //Image processing
+    public void rbImageMultiPicker(final RBMultipleImagePickerListener rbMultipleImagePickerListener, final Context context, int limit) {
+        tempImageMultiPicker(rbMultipleImagePickerListener, context, limit);
+    }
+
+
+    private void tempImageMultiPicker(final RBMultipleImagePickerListener rbMultipleImagePickerListener, final Context context, final int limit) {
         String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE
                 , Manifest.permission.WRITE_EXTERNAL_STORAGE
                 , Manifest.permission.CAMERA};
@@ -758,7 +768,13 @@ public class BaseHelper {
             }
 
             private void openRbPicker(final Context context) {
-                TedImagePicker.with(context).image().mediaType(gun0912.tedimagepicker.builder.type.MediaType.IMAGE).startMultiImage(new OnMultiSelectedListener() {
+                TedImagePicker.Builder withTemp = TedImagePicker.with(context);
+
+                if (limit != 0) {
+                    withTemp.max(limit, "Limit is " + limit);
+                }
+
+                withTemp.image().mediaType(gun0912.tedimagepicker.builder.type.MediaType.IMAGE).startMultiImage(new OnMultiSelectedListener() {
                     @Override
                     public void onSelected(@NotNull List<? extends Uri> list) {
                         new DialogMultiImageHelper(context, list, new RBMultipleImagePickerListener() {
@@ -777,7 +793,6 @@ public class BaseHelper {
             }
         });
     }
-
 
     public void cropImage(String path, int rotation, Context context, final ImageReceiveListener listener) {
         BitmapFactory.Options options = new BitmapFactory.Options();

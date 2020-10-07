@@ -31,7 +31,7 @@ public class MultiImagePageViewAdapter extends BasePagerAdapter {
     }
 
     private void setData(int position, ItemPageImageBinding binding) {
-        loadNetworkImage(arrayList.get(position).getImgUri(), binding.iv);
+        loadNetworkImage(arrayList.get(position).getPath(), binding.iv);
     }
 
     @Override
