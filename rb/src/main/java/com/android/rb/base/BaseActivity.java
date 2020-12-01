@@ -4,9 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Spanned;
+import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -181,6 +184,33 @@ public abstract class BaseActivity extends AppCompatActivity {
         setListener();
         setLabel();
         setToolbar();
+        initKeyBoardListener();
+    }
+
+    private void initKeyBoardListener() {
+        final int MIN_KEYBOARD_HEIGHT_PX = 150;
+        final View decorView = getWindow().getDecorView();
+        decorView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            private final Rect windowVisibleDisplayFrame = new Rect();
+            private int lastVisibleDecorViewHeight;
+
+            @Override
+            public void onGlobalLayout() {
+                decorView.getWindowVisibleDisplayFrame(windowVisibleDisplayFrame);
+                final int visibleDecorViewHeight = windowVisibleDisplayFrame.height();
+                if (lastVisibleDecorViewHeight != 0) {
+                    if (lastVisibleDecorViewHeight > visibleDecorViewHeight + MIN_KEYBOARD_HEIGHT_PX) {
+                        keyboardState(true);
+                    } else if (lastVisibleDecorViewHeight + MIN_KEYBOARD_HEIGHT_PX < visibleDecorViewHeight) {
+                        keyboardState(false);
+                    }
+                }
+                lastVisibleDecorViewHeight = visibleDecorViewHeight;
+            }
+        });
+    }
+
+    protected void keyboardState(boolean isOpen) {
     }
 
     protected void loadNetworkPDF(String pdfUrl, ImageView imageView) {
