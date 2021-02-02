@@ -1,7 +1,7 @@
 # Lib version
 ```gradle
 dependencies {
-    implementation 'com.github.dev-chetan:BaseAndroid:1.2.5'
+    implementation 'com.github.dev-chetan:BaseAndroid:1.3.2'
 }
 ```
 
