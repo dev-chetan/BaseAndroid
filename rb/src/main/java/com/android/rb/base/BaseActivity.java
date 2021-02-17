@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.exifinterface.media.ExifInterface;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,6 +26,7 @@ import com.android.rb.helper.DialogHelper;
 import com.android.rb.helper.DialogMultiImageHelper;
 import com.android.rb.helper.DialogStatus;
 import com.android.rb.helper.Preferences;
+import com.android.rb.interf.ImageReceiveListener;
 import com.android.rb.interf.RBImageCropListener;
 import com.android.rb.interf.RBImagePickerListener;
 import com.android.rb.interf.RBMultipleImagePickerListener;
@@ -33,6 +35,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -417,21 +420,40 @@ public abstract class BaseActivity extends AppCompatActivity {
             @Override
             public void onRBPickerResult(String imagePath) {
                 if (isCrop) {
-                    crop(imagePath);
+                    BaseHelper.getInstance().cropImage(imagePath, getRotation(imagePath), getContext(), new ImageReceiveListener() {
+                        @Override
+                        public void onImageReceived(ArrayList<String> images) {
+                            listener.onRBPickerResult(images.get(0));
+                        }
+                    });
                 } else {
                     listener.onRBPickerResult(imagePath);
                 }
             }
-
-            private void crop(String imagePath) {
-                rbCropImage(imagePath, new RBImageCropListener() {
-                    @Override
-                    public void onRBCropResult(String imagePath) {
-                        listener.onRBPickerResult(imagePath);
-                    }
-                });
-            }
         }, getContext());
+    }
+
+    private int getRotation(String imagePath) {
+        ExifInterface ei = null;
+        try {
+            ei = new ExifInterface(imagePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        int orientation = ei.getAttributeInt(ExifInterface.TAG_ORIENTATION,
+                ExifInterface.ORIENTATION_UNDEFINED);
+
+        switch (orientation) {
+            case ExifInterface.ORIENTATION_ROTATE_90:
+                return 90;
+            case ExifInterface.ORIENTATION_ROTATE_180:
+                return 180;
+            case ExifInterface.ORIENTATION_ROTATE_270:
+                return 270;
+            case ExifInterface.ORIENTATION_NORMAL:
+            default:
+                return 0;
+        }
     }
 
     public void rbCropImage(String imagePath, final RBImageCropListener listener) {
