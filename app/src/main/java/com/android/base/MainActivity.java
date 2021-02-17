@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil;
 import com.android.base.databinding.ActivityMainBinding;
 import com.android.rb.base.BaseActivity;
 import com.android.rb.helper.DialogMultiImageHelper;
+import com.android.rb.interf.RBImagePickerListener;
 import com.android.rb.interf.RBMultipleImagePickerListener;
 
 import java.util.ArrayList;
@@ -19,11 +20,18 @@ public class MainActivity extends BaseActivity {
     protected void initView() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        rbImageMultiPicker(new RBMultipleImagePickerListener() {
+        rbImagePicker(new RBImagePickerListener() {
+            @Override
+            public void onRBPickerResult(String imagePath) {
+                loadStorageImage(imagePath, binding.img);
+            }
+        }, true);
+
+       /* rbImageMultiPicker(new RBMultipleImagePickerListener() {
             @Override
             public void onRBPickerResult(ArrayList<DialogMultiImageHelper.ImageData> arrayList) {
                 Log.e("TAG", "onRBPickerResult: "+arrayList.size());
             }
-        },4);
+        },4);*/
     }
 }

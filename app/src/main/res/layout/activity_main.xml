@@ -29,9 +29,12 @@
             android:id="@+id/btnClick"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Click">
+            android:text="Click" />
 
-        </Button>
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
 
     </RelativeLayout>
 </layout>

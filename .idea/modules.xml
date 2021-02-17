@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BaseAndroid.iml" filepath="$PROJECT_DIR$/.idea/modules/BaseAndroid.iml" group="BaseAndroid" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="BaseAndroid/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylibrary/rb.iml" filepath="$PROJECT_DIR$/.idea/modules/mylibrary/rb.iml" group="BaseAndroid/rb" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BaseAndroid.iml" filepath="$PROJECT_DIR$/.idea/modules/BaseAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BaseAndroid.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BaseAndroid.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rb/BaseAndroid.rb.iml" filepath="$PROJECT_DIR$/.idea/modules/rb/BaseAndroid.rb.iml" />
     </modules>
   </component>
 </project>
