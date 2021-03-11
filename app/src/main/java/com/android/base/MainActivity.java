@@ -1,6 +1,7 @@
 package com.android.base;
 
 import android.util.Log;
+import android.view.View;
 
 import androidx.databinding.DataBindingUtil;
 
@@ -20,12 +21,17 @@ public class MainActivity extends BaseActivity {
     protected void initView() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        rbImagePicker(new RBImagePickerListener() {
+        binding.btnClick.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onRBPickerResult(String imagePath) {
-                loadStorageImage(imagePath, binding.img);
+            public void onClick(View view) {
+                rbImagePicker(new RBImagePickerListener() {
+                    @Override
+                    public void onRBPickerResult(String imagePath) {
+                        loadStorageImage(imagePath, binding.img);
+                    }
+                }, true);
             }
-        }, true);
+        });
 
        /* rbImageMultiPicker(new RBMultipleImagePickerListener() {
             @Override

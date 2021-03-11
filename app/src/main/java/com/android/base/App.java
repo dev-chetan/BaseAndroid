@@ -15,6 +15,7 @@ public class App extends Application {
         //Don't Remove Function, For Gallery
         //Must be required
         AppConfig.getInstance().setApplicationId(BuildConfig.APPLICATION_ID);
+        AppConfig.getInstance().setAPP_NAME(getString(R.string.app_name));
         //GetScreen Width and Height
         int widthPixels = Resources.getSystem().getDisplayMetrics().widthPixels;
         int heightPixels = Resources.getSystem().getDisplayMetrics().heightPixels;

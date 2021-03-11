@@ -33,7 +33,7 @@ public class AppConfig {
     }
 
     public void setAPP_NAME(String APP_NAME) {
-        this.APP_NAME = APP_NAME;
+        this.APP_NAME = "Download/" + APP_NAME;
     }
 
     public int getTxtPageNotFound() {
