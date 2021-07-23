@@ -13,14 +13,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6459d845-2b24-4d18-a3c0-4ea0ef549ca2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
+    <list default="true" id="6459d845-2b24-4d18-a3c0-4ea0ef549ca2" name="Default Changelist" comment="Mino Bug Fix">
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rb/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rb/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rb/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/rb/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -420,10 +418,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="Mino Bug Fix" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="140" y="100" key="CommitChangelistDialog2" timestamp="1626943587350">
+    <state x="140" y="100" key="CommitChangelistDialog2" timestamp="1626945007961">
       <screen x="65" y="23" width="1855" height="1057" />
     </state>
-    <state x="140" y="100" key="CommitChangelistDialog2/65.23.1855.1057@65.23.1855.1057" timestamp="1626943587350" />
+    <state x="140" y="100" key="CommitChangelistDialog2/65.23.1855.1057@65.23.1855.1057" timestamp="1626945007961" />
+    <state width="1395" height="393" key="GridCell.Tab.0.bottom" timestamp="1626944919501">
+      <screen x="65" y="23" width="1855" height="1057" />
+    </state>
+    <state width="1395" height="393" key="GridCell.Tab.0.bottom/65.23.1855.1057@65.23.1855.1057" timestamp="1626944919501" />
+    <state width="1395" height="393" key="GridCell.Tab.0.center" timestamp="1626944919501">
+      <screen x="65" y="23" width="1855" height="1057" />
+    </state>
+    <state width="1395" height="393" key="GridCell.Tab.0.center/65.23.1855.1057@65.23.1855.1057" timestamp="1626944919501" />
+    <state width="1395" height="393" key="GridCell.Tab.0.left" timestamp="1626944919500">
+      <screen x="65" y="23" width="1855" height="1057" />
+    </state>
+    <state width="1395" height="393" key="GridCell.Tab.0.left/65.23.1855.1057@65.23.1855.1057" timestamp="1626944919500" />
+    <state width="1395" height="393" key="GridCell.Tab.0.right" timestamp="1626944919501">
+      <screen x="65" y="23" width="1855" height="1057" />
+    </state>
+    <state width="1395" height="393" key="GridCell.Tab.0.right/65.23.1855.1057@65.23.1855.1057" timestamp="1626944919501" />
     <state x="385" y="264" key="Vcs.Push.Dialog.v2" timestamp="1626943589430">
       <screen x="65" y="23" width="1855" height="1057" />
     </state>
