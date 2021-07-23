@@ -7,11 +7,14 @@ import androidx.databinding.DataBindingUtil;
 
 import com.android.base.databinding.ActivityMainBinding;
 import com.android.rb.base.BaseActivity;
+import com.android.rb.helper.BottomSheetHelper;
 import com.android.rb.helper.DialogMultiImageHelper;
 import com.android.rb.interf.RBImagePickerListener;
 import com.android.rb.interf.RBMultipleImagePickerListener;
+import com.android.rb.models.BottomSheetData;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends BaseActivity {
 
@@ -21,23 +24,19 @@ public class MainActivity extends BaseActivity {
     protected void initView() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        binding.btnClick.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                rbImagePicker(new RBImagePickerListener() {
-                    @Override
-                    public void onRBPickerResult(String imagePath) {
-                        loadStorageImage(imagePath, binding.img);
-                    }
-                }, true);
-            }
-        });
 
-       /* rbImageMultiPicker(new RBMultipleImagePickerListener() {
-            @Override
-            public void onRBPickerResult(ArrayList<DialogMultiImageHelper.ImageData> arrayList) {
-                Log.e("TAG", "onRBPickerResult: "+arrayList.size());
-            }
-        },4);*/
+
+        new BottomSheetHelper(getContext(), "Test", getListForBottomSheet(), arrayList -> {
+
+        }, BottomSheetHelper.Type.singleSearch);
+    }
+
+    private List<BottomSheetData> getListForBottomSheet() {
+        List<BottomSheetData> sheetData = new ArrayList<>();
+        sheetData.add(new BottomSheetData(false,"JJJ"));
+        sheetData.add(new BottomSheetData(false,"JJJ"));
+        sheetData.add(new BottomSheetData(false,"JJJ"));
+        sheetData.add(new BottomSheetData(false,"JJJ"));
+        return sheetData;
     }
 }
